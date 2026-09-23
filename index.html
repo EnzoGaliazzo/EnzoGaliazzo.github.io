@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enzo Rezende · desenvolvedor web</title>
+<meta name="description" content="Enzo Rezende, desenvolvedor web no Rio de Janeiro e estudante de Análise e Desenvolvimento de Sistemas na UVA. Trabalhos, formação e contato.">
+<link rel="canonical" href="https://enzogaliazzo.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://enzogaliazzo.github.io/">
+<meta property="og:title" content="Enzo Rezende · desenvolvedor web">
+<meta property="og:description" content="Desenvolvedor web no Rio de Janeiro e estudante de ADS na UVA.">
+<meta property="og:image" content="https://enzogaliazzo.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111214" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,400..800&display=swap">
+<style>
+  :root {
+    color-scheme: light dark;
+    --papel: #ffffff;
+    --tinta: #16171a;
+    --grafite: #5c5f66;
+    --linha: #e3e4e7;
+    --caixa: #0f0f10;
+    --led: #ffa21f;
+    --borda-tela: rgba(22, 23, 26, 0.12);
+    --largura: 1040px;
+    --lateral: 16px;
+  }
+  @media (min-width: 720px) {
+    :root { --lateral: 32px; }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --papel: #111214;
+      --tinta: #ecedee;
+      --grafite: #9ea1a8;
+      --linha: #26282d;
+      --caixa: #060607;
+      --borda-tela: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--papel);
+    color: var(--tinta);
+    font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a {
+    color: inherit;
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+    text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  }
+  a:hover { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
+  :focus-visible { outline: 2px solid var(--tinta); outline-offset: 3px; border-radius: 2px; }
+  ::selection { background: var(--led); color: #16171a; }
+
+  .pagina {
+    width: 100%;
+    max-width: calc(var(--largura) + 2 * var(--lateral));
+    margin-inline: auto;
+    padding-inline: var(--lateral);
+  }
+
+  /* Letreiro */
+  .topo { padding-top: clamp(16px, 4vw, 48px); }
+  .letreiro {
+    position: relative;
+    background: var(--caixa);
+    border-radius: 10px;
+    padding: clamp(8px, 1.5vw, 16px);
+  }
+  .letreiro-painel { display: block; width: 100%; height: 0; }
+  .letreiro-texto {
+    display: flex;
+    align-items: baseline;
+    gap: 0.45em;
+    margin: 0;
+    padding: 0.1em 0.15em;
+    color: var(--led);
+    font-size: clamp(2rem, 1rem + 5vw, 4.4rem);
+    font-weight: 800;
+    font-stretch: 70%;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .letreiro-ativo .letreiro-texto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  /* Apresentação */
+  .apresentacao {
+    display: grid;
+    gap: 28px;
+    margin-top: clamp(32px, 5vw, 56px);
+    padding-bottom: clamp(64px, 9vw, 112px);
+  }
+  .abertura {
+    max-width: 30ch;
+    margin: 0 0 20px;
+    font-size: clamp(1.5rem, 1.05rem + 1.9vw, 2.3rem);
+    font-weight: 500;
+    line-height: 1.22;
+    letter-spacing: -0.015em;
+  }
+  .resumo { max-width: 58ch; margin: 0; color: var(--grafite); }
+  .redes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 600;
+  }
+  @media (min-width: 860px) {
+    .apresentacao { grid-template-columns: minmax(0, 1fr) 180px; gap: 64px; align-items: end; }
+    .redes { flex-direction: column; gap: 6px; }
+  }
+
+  /* Seções */
+  .bloco {
+    padding-top: 18px;
+    padding-bottom: clamp(72px, 10vw, 128px);
+    border-top: 1px solid var(--linha);
+  }
+  .rotulo, .rotulo-pequeno, .ficha dt {
+    color: var(--grafite);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .rotulo { margin: 0 0 clamp(32px, 5vw, 56px); }
+  .rotulo-pequeno { margin: 0 0 12px; }
+
+  /* Projetos */
+  .projeto + .projeto { margin-top: clamp(72px, 10vw, 120px); }
+  .projeto-cabeca {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px 24px;
+    margin-bottom: 24px;
+  }
+  .projeto-nome {
+    margin: 0;
+    font-size: clamp(2.75rem, 1.5rem + 6vw, 5.5rem);
+    font-weight: 800;
+    font-stretch: 68%;
+    line-height: 0.9;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+  }
+  .projeto-meta { margin: 0; color: var(--grafite); }
+
+  .telas {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.462fr);
+    gap: clamp(12px, 2vw, 24px);
+    align-items: start;
+  }
+  .tela { margin: 0; }
+  .tela img {
+    width: 100%;
+    border: 1px solid var(--borda-tela);
+    border-radius: 8px;
+    background: var(--linha);
+  }
+  .tela-celular img { border-radius: 14px; }
+  .tela figcaption {
+    margin-top: 10px;
+    color: var(--grafite);
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+  @media (max-width: 719px) {
+    .telas { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+    .telas img { height: 230px; object-fit: cover; object-position: left top; }
+    .telas .tela-celular img { object-position: center top; }
+  }
+
+  .projeto-corpo {
+    display: grid;
+    gap: 32px;
+    margin-top: clamp(28px, 4vw, 44px);
+  }
+  .descricao { margin: 0; font-size: 1.1875rem; line-height: 1.5; }
+  .detalhes { margin: 0; padding: 0; list-style: none; }
+  .detalhes li { padding: 12px 0; border-top: 1px solid var(--linha); }
+  .detalhes li:last-child { border-bottom: 1px solid var(--linha); }
+  @media (min-width: 860px) {
+    .projeto-corpo { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; }
+  }
+
+  .projeto-menor { display: grid; gap: 28px; }
+  .projeto-menor .projeto-nome { font-size: clamp(2.25rem, 1.4rem + 3.6vw, 3.75rem); }
+  .projeto-menor .projeto-meta { margin: 10px 0 18px; }
+  .projeto-menor .descricao { font-size: 1.0625rem; line-height: 1.6; }
+  .links-projeto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    margin: 20px 0 0;
+    font-weight: 600;
+  }
+  @media (min-width: 860px) {
+    .projeto-menor { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 56px; align-items: center; }
+  }
+
+  /* Sobre */
+  .fichas { margin: 0; }
+  .ficha {
+    display: grid;
+    gap: 4px;
+    padding: 18px 0;
+    border-top: 1px solid var(--linha);
+  }
+  .ficha:last-child { border-bottom: 1px solid var(--linha); }
+  .ficha dt { padding-top: 0.2em; }
+  .ficha dd { margin: 0; }
+  .ficha p { margin: 0; }
+  .ficha p + p { margin-top: 10px; }
+  .fraco { color: var(--grafite); }
+  @media (min-width: 720px) {
+    .ficha { grid-template-columns: 200px minmax(0, 1fr); gap: 24px; }
+  }
+
+  /* Rodapé */
+  .rodape {
+    padding: 24px 0 56px;
+    border-top: 1px solid var(--linha);
+    color: var(--grafite);
+    font-size: 0.9375rem;
+  }
+  .rodape p { max-width: 62ch; margin: 0; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Enzo Rezende",
+  "url": "https://enzogaliazzo.github.io/",
+  "jobTitle": "Desenvolvedor web",
+  "address": { "@type": "PostalAddress", "addressLocality": "Rio de Janeiro", "addressCountry": "BR" },
+  "affiliation": { "@type": "CollegeOrUniversity", "name": "Universidade Veiga de Almeida" },
+  "sameAs": [
+    "https://www.linkedin.com/in/enzorezende07/",
+    "https://github.com/EnzoGaliazzo",
+    "https://www.instagram.com/galiaco0/"
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="topo pagina">
+  <div class="letreiro">
+    <h1 class="letreiro-texto"><span aria-hidden="true">21</span> <span>Enzo Rezende</span></h1>
+    <canvas class="letreiro-painel" aria-hidden="true"></canvas>
+  </div>
+
+  <div class="apresentacao">
+    <div>
+      <p class="abertura">Faço sites que abrem rápido, funcionam bem no celular e continuam fáceis de mexer depois de prontos.</p>
+      <p class="resumo">Estudo Análise e Desenvolvimento de Sistemas na Universidade Veiga de Almeida, no campus da Barra da Tijuca, aqui no Rio. O maior projeto que coloquei no ar até agora é o site da <a href="https://distririo.com.br">Distri Rio</a>.</p>
+    </div>
+    <ul class="redes" aria-label="Onde me encontrar">
+      <li><a href="https://www.linkedin.com/in/enzorezende07/">LinkedIn</a></li>
+      <li><a href="https://github.com/EnzoGaliazzo">GitHub</a></li>
+      <li><a href="https://www.instagram.com/galiaco0/">Instagram</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="pagina">
+  <section class="bloco" aria-labelledby="titulo-trabalhos">
+    <h2 class="rotulo" id="titulo-trabalhos">Trabalhos</h2>
+
+    <article class="projeto">
+      <header class="projeto-cabeca">
+        <h3 class="projeto-nome">Distri Rio</h3>
+        <p class="projeto-meta">Site e catálogo, no ar em <a href="https://distririo.com.br">distririo.com.br</a></p>
+      </header>
+
+      <div class="telas">
+        <figure class="tela">
+          <img src="assets/distririo-catalogo.webp" width="2049" height="1281" loading="lazy" decoding="async"
+               alt="Catálogo da Distri Rio no computador: busca no topo, filtro por seção e por marca à esquerda e os produtos da linha Trident">
+          <figcaption>O catálogo, com filtro por seção e por marca</figcaption>
+        </figure>
+        <figure class="tela tela-celular">
+          <img src="assets/distririo-celular.webp" width="780" height="1688" loading="lazy" decoding="async"
+               alt="Página inicial da Distri Rio no celular, com o banner, a chamada principal e os botões Quero ser cliente e Ver o catálogo">
+          <figcaption>A página inicial no celular</figcaption>
+        </figure>
+      </div>
+
+      <div class="projeto-corpo">
+        <p class="descricao">Site e catálogo de uma distribuidora de doces, bebidas, energéticos e suplementos que atende comércios do Rio de Janeiro e da Baixada Fluminense. O comerciante monta a lista de pedido no catálogo, e ela chega pronta no WhatsApp da distribuidora.</p>
+        <div>
+          <h4 class="rotulo-pequeno">Por dentro</h4>
+          <ul class="detalhes">
+            <li>O catálogo inteiro fica num único arquivo JSON. Um script em Node gera, a partir dele, as 333 páginas de produto e as 19 de marca.</li>
+            <li>A cada push, o GitHub Actions confere os links, as imagens e os fluxos principais num Chrome sem interface.</li>
+            <li>Não tem framework: é HTML, CSS e JavaScript puros, publicados no GitHub Pages com domínio próprio.</li>
+            <li>Imagens em WebP e AVIF, dados estruturados para o Google e cookies de medição só depois do aceite, como pede a LGPD.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="projeto projeto-menor">
+      <figure class="tela">
+        <img src="assets/catalogo-series.webp" width="1254" height="783" loading="lazy" decoding="async"
+             alt="Catálogo de Séries: campo de busca, filtro de gênero e os cards de Dexter e Suits">
+      </figure>
+      <div>
+        <h3 class="projeto-nome">Catálogo de Séries</h3>
+        <p class="projeto-meta">Projeto de estudo na Alura</p>
+        <p class="descricao">Um catálogo que carrega as séries de um arquivo JSON, com busca por nome, filtro por gênero e os detalhes de cada título numa janela. Fiz para praticar front-end: mexer no DOM, trabalhar com dados em JSON e montar um layout responsivo.</p>
+        <p class="links-projeto">
+          <a href="https://enzogaliazzo.github.io/ProjetoAlura/">Ver o projeto</a>
+          <a href="https://github.com/EnzoGaliazzo/ProjetoAlura">Ver o código</a>
+        </p>
+      </div>
+    </article>
+  </section>
+
+  <section class="bloco" aria-labelledby="titulo-sobre">
+    <h2 class="rotulo" id="titulo-sobre">Sobre</h2>
+    <dl class="fichas">
+      <div class="ficha">
+        <dt>Formação</dt>
+        <dd>
+          <p>Análise e Desenvolvimento de Sistemas<br><span class="fraco">Universidade Veiga de Almeida (UVA), campus Barra da Tijuca</span></p>
+          <p>Front-end<br><span class="fraco">Cursos na Alura</span></p>
+        </dd>
+      </div>
+      <div class="ficha">
+        <dt>Ferramentas</dt>
+        <dd><p>HTML, CSS, JavaScript, Node.js, Python, Git, GitHub Actions e GitHub Pages</p></dd>
+      </div>
+      <div class="ficha">
+        <dt>Contato</dt>
+        <dd><p>O jeito mais rápido de falar comigo é pelo <a href="https://www.linkedin.com/in/enzorezende07/">LinkedIn</a>. Também estou no <a href="https://www.instagram.com/galiaco0/">Instagram</a> e no <a href="https://github.com/EnzoGaliazzo">GitHub</a>.</p></dd>
+      </div>
+    </dl>
+  </section>
+</main>
+
+<footer class="pagina">
+  <div class="rodape">
+    <p>Este site é HTML, CSS e um pouco de JavaScript, sem framework. O letreiro do topo é desenhado ponto a ponto num canvas, no estilo dos painéis de LED dos ônibus, e o 21 é o DDD do Rio. <a href="https://github.com/EnzoGaliazzo/EnzoGaliazzo.github.io">Ver o código</a></p>
+  </div>
+</footer>
+
+<script src="letreiro.js" defer></script>
+</body>
+</html>
