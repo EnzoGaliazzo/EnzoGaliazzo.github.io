@@ -163,7 +163,11 @@
 
   function desenhar(grade) {
     const dpr = window.devicePixelRatio || 1;
+    // Limpa em pixels do aparelho: com zoom abaixo de 100% a escala fica menor que 1
+    ctx.save();
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, painel.width, painel.height);
+    ctx.restore();
     const raio = passo * 0.36;
     const apagados = new Path2D();
     const acesos = new Path2D();
