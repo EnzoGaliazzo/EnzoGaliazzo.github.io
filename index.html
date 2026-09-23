@@ -86,6 +86,9 @@
     border-radius: 10px;
     padding: clamp(8px, 1.5vw, 16px);
   }
+  @media (prefers-color-scheme: dark) {
+    .letreiro { box-shadow: 0 0 0 1px #2a2b31; }
+  }
   .letreiro-painel { display: block; width: 100%; height: 0; }
   .letreiro-texto {
     display: flex;
@@ -113,33 +116,20 @@
 
   /* Apresentação */
   .apresentacao {
-    display: grid;
-    gap: 28px;
-    margin-top: clamp(32px, 5vw, 56px);
-    padding-bottom: clamp(64px, 9vw, 112px);
+    margin-top: clamp(28px, 4vw, 48px);
+    padding-bottom: clamp(56px, 7vw, 88px);
   }
   .abertura {
-    max-width: 30ch;
+    max-width: 31ch;
     margin: 0 0 20px;
     font-size: clamp(1.5rem, 1.05rem + 1.9vw, 2.3rem);
     font-weight: 500;
     line-height: 1.22;
     letter-spacing: -0.015em;
   }
+  .abertura a { text-decoration-thickness: 2px; }
   .resumo { max-width: 58ch; margin: 0; color: var(--grafite); }
-  .redes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 24px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-weight: 600;
-  }
-  @media (min-width: 860px) {
-    .apresentacao { grid-template-columns: minmax(0, 1fr) 180px; gap: 64px; align-items: end; }
-    .redes { flex-direction: column; gap: 6px; }
-  }
+  .convite { max-width: 58ch; margin: 10px 0 0; }
 
   /* Seções */
   .bloco {
@@ -154,7 +144,7 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
-  .rotulo { margin: 0 0 clamp(32px, 5vw, 56px); }
+  .rotulo { margin: 0 0 clamp(28px, 4vw, 44px); }
   .rotulo-pequeno { margin: 0 0 12px; }
 
   /* Projetos */
@@ -169,7 +159,7 @@
   }
   .projeto-nome {
     margin: 0;
-    font-size: clamp(2.75rem, 1.5rem + 6vw, 5.5rem);
+    font-size: clamp(2.75rem, 1.5rem + 5.4vw, 5rem);
     font-weight: 800;
     font-stretch: 68%;
     line-height: 0.9;
@@ -177,6 +167,7 @@
     text-transform: uppercase;
   }
   .projeto-meta { margin: 0; color: var(--grafite); }
+  .projeto-meta a { color: var(--tinta); font-weight: 600; }
 
   .telas {
     display: grid;
@@ -192,6 +183,10 @@
     background: var(--linha);
   }
   .tela-celular img { border-radius: 14px; }
+  .tela-link { display: block; border-radius: 8px; }
+  .tela-celular .tela-link { border-radius: 14px; }
+  .tela-link img { transition: border-color 0.15s; }
+  .tela-link:hover img { border-color: var(--grafite); }
   .tela figcaption {
     margin-top: 10px;
     color: var(--grafite);
@@ -246,6 +241,9 @@
   .ficha p { margin: 0; }
   .ficha p + p { margin-top: 10px; }
   .fraco { color: var(--grafite); }
+  .contatos { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+  .contatos li { display: flex; gap: 16px; }
+  .contatos .fraco { min-width: 5.5em; }
   @media (min-width: 720px) {
     .ficha { grid-template-columns: 200px minmax(0, 1fr); gap: 24px; }
   }
@@ -285,15 +283,9 @@
   </div>
 
   <div class="apresentacao">
-    <div>
-      <p class="abertura">Faço sites que abrem rápido, funcionam bem no celular e continuam fáceis de mexer depois de prontos.</p>
-      <p class="resumo">Estudo Análise e Desenvolvimento de Sistemas na Universidade Veiga de Almeida, no campus da Barra da Tijuca, aqui no Rio. O maior projeto que coloquei no ar até agora é o site da <a href="https://distririo.com.br">Distri Rio</a>.</p>
-    </div>
-    <ul class="redes" aria-label="Onde me encontrar">
-      <li><a href="https://www.linkedin.com/in/enzorezende07/">LinkedIn</a></li>
-      <li><a href="https://github.com/EnzoGaliazzo">GitHub</a></li>
-      <li><a href="https://www.instagram.com/galiaco0/">Instagram</a></li>
-    </ul>
+    <p class="abertura">Faço sites e coloco no ar. O maior até agora é o da <a href="#distri-rio">Distri Rio</a>, com um catálogo de 333 produtos e pedido pelo WhatsApp.</p>
+    <p class="resumo">Estudo Análise e Desenvolvimento de Sistemas na Universidade Veiga de Almeida, no campus da Barra da Tijuca, aqui no Rio.</p>
+    <p class="convite">Para falar comigo, me chama no <a href="https://www.linkedin.com/in/enzorezende07/">LinkedIn</a> ou no <a href="https://www.instagram.com/galiaco0/">Instagram</a>. O código dos projetos está no <a href="https://github.com/EnzoGaliazzo">GitHub</a>.</p>
   </div>
 </header>
 
@@ -301,7 +293,7 @@
   <section class="bloco" aria-labelledby="titulo-trabalhos">
     <h2 class="rotulo" id="titulo-trabalhos">Trabalhos</h2>
 
-    <article class="projeto">
+    <article class="projeto" id="distri-rio">
       <header class="projeto-cabeca">
         <h3 class="projeto-nome">Distri Rio</h3>
         <p class="projeto-meta">Site e catálogo, no ar em <a href="https://distririo.com.br">distririo.com.br</a></p>
@@ -309,13 +301,17 @@
 
       <div class="telas">
         <figure class="tela">
-          <img src="assets/distririo-catalogo.webp" width="2049" height="1281" loading="lazy" decoding="async"
-               alt="Catálogo da Distri Rio no computador: busca no topo, filtro por seção e por marca à esquerda e os produtos da linha Trident">
+          <a class="tela-link" href="https://distririo.com.br/loja.html">
+            <img src="assets/distririo-catalogo.webp" width="2049" height="1281" loading="lazy" decoding="async"
+                 alt="Catálogo da Distri Rio no computador: busca no topo, filtro por seção e por marca à esquerda e os produtos da linha Trident">
+          </a>
           <figcaption>O catálogo, com filtro por seção e por marca</figcaption>
         </figure>
         <figure class="tela tela-celular">
-          <img src="assets/distririo-celular.webp" width="780" height="1688" loading="lazy" decoding="async"
-               alt="Página inicial da Distri Rio no celular, com o banner, a chamada principal e os botões Quero ser cliente e Ver o catálogo">
+          <a class="tela-link" href="https://distririo.com.br/">
+            <img src="assets/distririo-celular.webp" width="780" height="1688" loading="lazy" decoding="async"
+                 alt="Página inicial da Distri Rio no celular, com o banner, a chamada principal e os botões Quero ser cliente e Ver o catálogo">
+          </a>
           <figcaption>A página inicial no celular</figcaption>
         </figure>
       </div>
@@ -344,7 +340,6 @@
         <p class="projeto-meta">Projeto de estudo na Alura</p>
         <p class="descricao">Um catálogo que carrega as séries de um arquivo JSON, com busca por nome, filtro por gênero e os detalhes de cada título numa janela. Fiz para praticar front-end: mexer no DOM, trabalhar com dados em JSON e montar um layout responsivo.</p>
         <p class="links-projeto">
-          <a href="https://enzogaliazzo.github.io/ProjetoAlura/">Ver o projeto</a>
           <a href="https://github.com/EnzoGaliazzo/ProjetoAlura">Ver o código</a>
         </p>
       </div>
@@ -358,7 +353,7 @@
         <dt>Formação</dt>
         <dd>
           <p>Análise e Desenvolvimento de Sistemas<br><span class="fraco">Universidade Veiga de Almeida (UVA), campus Barra da Tijuca</span></p>
-          <p>Front-end<br><span class="fraco">Cursos na Alura</span></p>
+          <p>Front-end<br><span class="fraco">Estudos na Alura</span></p>
         </dd>
       </div>
       <div class="ficha">
@@ -367,7 +362,13 @@
       </div>
       <div class="ficha">
         <dt>Contato</dt>
-        <dd><p>O jeito mais rápido de falar comigo é pelo <a href="https://www.linkedin.com/in/enzorezende07/">LinkedIn</a>. Também estou no <a href="https://www.instagram.com/galiaco0/">Instagram</a> e no <a href="https://github.com/EnzoGaliazzo">GitHub</a>.</p></dd>
+        <dd>
+          <ul class="contatos">
+            <li><span class="fraco">LinkedIn</span> <a href="https://www.linkedin.com/in/enzorezende07/">enzorezende07</a></li>
+            <li><span class="fraco">Instagram</span> <a href="https://www.instagram.com/galiaco0/">@galiaco0</a></li>
+            <li><span class="fraco">GitHub</span> <a href="https://github.com/EnzoGaliazzo">EnzoGaliazzo</a></li>
+          </ul>
+        </dd>
       </div>
     </dl>
   </section>
