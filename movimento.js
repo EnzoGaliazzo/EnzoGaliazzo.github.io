@@ -143,6 +143,69 @@
     if (marcas.length) entrada.from(marcas, { scale: 0, duration: 0.35, stagger: 0.14, ease: 'back.out(3)' }, '<');
   });
 
+  // Faixa de ferramentas: anda sozinha e acelera (ou inverte) conforme a rolagem
+  const faixa = gsap.to('.faixa-trilho', { xPercent: -50, duration: 28, ease: 'none', repeat: -1 });
+  faixa.totalTime(faixa.duration() * 500); // folga para poder andar para trás
+  let acalmar;
+  ScrollTrigger.create({
+    trigger: '.faixa',
+    start: 'top bottom',
+    end: 'bottom top',
+    onUpdate: (st) => {
+      const sentido = st.direction || 1;
+      const impulso = gsap.utils.clamp(1, 6, 1 + Math.abs(st.getVelocity()) / 400);
+      gsap.to(faixa, { timeScale: sentido * impulso, duration: 0.2, overwrite: true });
+      clearTimeout(acalmar);
+      acalmar = setTimeout(() => gsap.to(faixa, { timeScale: sentido, duration: 1, overwrite: true }), 150);
+    },
+  });
+
+  // Números contam até o valor quando entram na tela
+  gsap.utils.toArray('[data-contar]').forEach((numero) => {
+    const alvo = Number(numero.dataset.contar);
+    const contador = { n: 0 };
+    numero.textContent = '0';
+    gsap.to(contador, {
+      n: alvo,
+      duration: alvo > 50 ? 1.8 : 1.1,
+      ease: 'power2.out',
+      onUpdate: () => { numero.textContent = Math.round(contador.n); },
+      scrollTrigger: { trigger: numero, start: 'top 90%', once: true },
+    });
+  });
+
+  // Cartões de serviço entram em sequência
+  gsap.set('.servico', { y: 40, opacity: 0 });
+  ScrollTrigger.batch('.servico', {
+    start: 'top 90%',
+    once: true,
+    onEnter: (lote) => gsap.to(lote, {
+      y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', stagger: 0.1, overwrite: true,
+      onComplete: () => gsap.set(lote, { clearProps: 'transform' }),
+    }),
+  });
+
+  // Mural: cada foto abre de baixo para cima quando entra na tela
+  gsap.utils.toArray('.mural-moldura').forEach((moldura) => {
+    gsap.timeline({ scrollTrigger: { trigger: moldura, start: 'top 92%', once: true } })
+      .from(moldura, { clipPath: 'inset(100% 0% 0% 0%)', duration: 1.1, ease: 'power4.inOut' })
+      .from(moldura.querySelector('img'), { scale: 1.3, duration: 1.4, ease: 'power3.out' }, 0);
+  });
+
+  // Botões grudam de leve no mouse
+  if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    gsap.utils.toArray('.botao').forEach((botao) => {
+      const x = gsap.quickTo(botao, 'x', { duration: 0.5, ease: 'power3' });
+      const y = gsap.quickTo(botao, 'y', { duration: 0.5, ease: 'power3' });
+      botao.addEventListener('pointermove', (e) => {
+        const r = botao.getBoundingClientRect();
+        x((e.clientX - r.left - r.width / 2) * 0.25);
+        y((e.clientY - r.top - r.height / 2) * 0.35);
+      });
+      botao.addEventListener('pointerleave', () => { x(0); y(0); });
+    });
+  }
+
   // Screenshot do Catálogo de Séries com leve paralaxe dentro da moldura
   gsap.fromTo('.series .tela-link img',
     { scale: 1.12, yPercent: -4 },
@@ -150,6 +213,17 @@
       scale: 1.12, yPercent: 4, ease: 'none',
       scrollTrigger: { trigger: '.series .tela-link', start: 'top bottom', end: 'bottom top', scrub: true },
     });
+
+  // Colunas do mural andam em velocidades diferentes
+  telas.add('(min-width: 860px)', () => {
+    gsap.utils.toArray('.mural-coluna').forEach((coluna) => {
+      gsap.to(coluna, {
+        yPercent: Number(coluna.dataset.velocidade) || 0,
+        ease: 'none',
+        scrollTrigger: { trigger: '.mural', start: 'top bottom', end: 'bottom top', scrub: true },
+      });
+    });
+  });
 
   // Textos dependem da fonte carregada para quebrar as linhas no lugar certo
   document.fonts.ready.then(() => {

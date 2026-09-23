@@ -56,11 +56,13 @@
       [['ENZO REZENDE', 2]],
       [['DESENVOLVEDOR WEB', 1], ['RIO DE JANEIRO', 1]],
       [['ESTUDANTE DE ADS', 1], ['VIA UVA BARRA', 1]],
+      [['6 MESES EM', 1], ['VANCOUVER', 1]],
     ],
     estreito: [
       [['ENZO', 2], ['REZENDE', 2]],
       [['DESENVOLVEDOR', 1], ['WEB', 1], ['RIO DE JANEIRO', 1]],
       [['ESTUDANTE', 1], ['DE ADS', 1], ['VIA UVA BARRA', 1]],
+      [['6 MESES', 1], ['EM', 1], ['VANCOUVER', 1]],
     ],
   };
 
@@ -206,7 +208,7 @@
 
   // Passa uma vez pelos quadros e volta para o nome, onde fica parado
   function tocar() {
-    const ordem = [1, 2, 0];
+    const ordem = [1, 2, 3, 0];
     let k = 0;
     const avancar = () => {
       mostrandoVazia = true;
