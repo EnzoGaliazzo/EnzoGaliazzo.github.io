@@ -1,0 +1,269 @@
+/* Currículo (curriculo.html e curriculo-en.html): uma folha A4 na impressão, uma coluna legível no celular */
+:root {
+  color-scheme: light;
+  --papel: #ffffff;
+  --tinta: #16171a;
+  --grafite: #5c5f66;
+  --claro: #8a8d94;
+  --linha: #e3e4e7;
+  --fundo: #eceef1;
+  --led: #ffa21f;
+  --fonte: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --rotulo: 33mm;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--tinta);
+  font-family: var(--fonte);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #c4c6cc;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+a:hover { text-decoration-color: var(--led); }
+a:focus-visible {
+  outline: 2px solid var(--led);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+h1, h2, h3, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+
+/* Barra de navegação: só na tela */
+.barra {
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 14px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  font-size: 14px;
+  color: var(--grafite);
+}
+.barra a { color: var(--grafite); }
+.barra .barra-inicio { margin-right: auto; }
+
+@media (prefers-color-scheme: dark) {
+  /* A folha continua branca, como papel; só o fundo em volta escurece */
+  body { background: #111214; }
+  .barra a {
+    color: #c3c5ca;
+    text-decoration-color: #4a4d54;
+  }
+}
+
+/* A folha */
+.folha {
+  max-width: 210mm;
+  margin: 0 auto 40px;
+  padding: 44px 16px 40px;
+  background: var(--papel);
+}
+@media (min-width: 720px) {
+  .folha {
+    padding: 14mm;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(22, 23, 26, 0.06), 0 8px 30px rgba(22, 23, 26, 0.08);
+  }
+}
+
+/* Topo: nome à esquerda, contatos à direita */
+.topo {
+  display: grid;
+  gap: 18px;
+  padding-bottom: 16px;
+}
+@media (min-width: 720px) {
+  .topo {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 24px;
+  }
+}
+.nome {
+  font-size: 32px;
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+.cargo {
+  margin-top: 8px;
+  font-size: 16px;
+  color: var(--grafite);
+}
+.contato {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 12px;
+  font-size: 14px;
+}
+.contato dt {
+  color: var(--claro);
+}
+.contato dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Fio âmbar sobre a linha cinza, logo abaixo do topo */
+.fio {
+  height: 2px;
+  margin: 0 0 4px;
+  border: 0;
+  background: linear-gradient(to right, var(--led) 0 22mm, var(--linha) 22mm);
+}
+
+/* Seções: rótulo na coluna estreita, conteúdo na larga */
+.secao {
+  display: grid;
+  gap: 6px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--linha);
+}
+.secao:last-child { border-bottom: 0; }
+@media (min-width: 720px) {
+  .secao {
+    grid-template-columns: var(--rotulo) 1fr;
+    align-items: baseline;
+    gap: 16px;
+  }
+}
+.secao-titulo {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  font-size: 11.5px;
+  line-height: 1.6;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  /* Sem kerning: com o espaçamento entre letras, o par kernado faz leitores de PDF separarem a palavra */
+  font-kerning: none;
+  color: var(--grafite);
+}
+.secao-titulo::before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  background: var(--led);
+  transform: translateY(-1px);
+}
+
+.item + .item { margin-top: 14px; }
+.item-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 10px;
+}
+.item-titulo {
+  font-size: 15px;
+  font-weight: 650;
+}
+.item-meta {
+  color: var(--grafite);
+  font-size: 14px;
+}
+.item-descricao {
+  margin-top: 3px;
+  text-wrap: pretty;
+}
+.item p + p { margin-top: 2px; }
+.nota { color: var(--grafite); }
+
+.pontos {
+  margin-top: 6px;
+}
+.pontos li {
+  position: relative;
+  padding-left: 14px;
+  text-wrap: pretty;
+}
+.pontos li + li { margin-top: 3px; }
+.pontos li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--claro);
+}
+
+/* Lista curta em uma linha, separada por pontos médios */
+.em-linha li {
+  display: inline;
+  white-space: nowrap;
+}
+.em-linha li:not(:last-child)::after {
+  content: "\00a0·";
+  color: var(--claro);
+}
+
+/* Impressão: uma folha A4 */
+@page {
+  size: A4;
+  margin: 14mm;
+}
+@media print {
+  html,
+  body {
+    background: #ffffff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body {
+    font-size: 10pt;
+    line-height: 1.45;
+  }
+  .barra { display: none; }
+  .folha {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .topo {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 8mm;
+    padding-bottom: 6mm;
+  }
+  .nome { font-size: 26pt; }
+  .cargo { margin-top: 2mm; font-size: 11pt; }
+  .contato { font-size: 9pt; gap: 0.4mm 3.5mm; }
+  .secao {
+    grid-template-columns: var(--rotulo) 1fr;
+    align-items: baseline;
+    gap: 5mm;
+    padding: 4.3mm 0;
+    break-inside: avoid;
+  }
+  .secao-titulo { font-size: 7.6pt; }
+  .secao-titulo::before { width: 1.6mm; height: 1.6mm; }
+  .item + .item { margin-top: 3.8mm; }
+  .item-titulo { font-size: 10.4pt; }
+  .item-meta { font-size: 9.2pt; }
+  .pontos { margin-top: 1.4mm; }
+  .pontos li + li { margin-top: 0.7mm; }
+  a { text-decoration-color: #d3d5da; }
+}
