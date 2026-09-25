@@ -1,0 +1,13 @@
+import { iniciarMar } from '../js/mar.js';
+import { distorcaoNoHover } from '../js/fotos-gl.js';
+document.body.style.cssText='margin:0;background:#0e1a2b;color:#f1e8da;font:16px/1.5 system-ui,sans-serif';
+const main=document.querySelector('main');main.style.cssText='max-width:1100px;margin:auto;padding:24px';
+document.querySelector('h1').style.cssText='font-size:clamp(1.4rem,3vw,2.2rem);font-weight:500;margin:0 0 16px';
+document.querySelector('h2').style.cssText='font-size:1.25rem;font-weight:500;margin:36px 0 14px';
+document.querySelector('#mar').style.cssText='display:block;width:100%;height:70vh;min-height:360px';
+document.querySelector('label').style.cssText='display:flex;justify-content:space-between;margin:16px 0 6px';
+document.querySelector('input[type=range]').style.cssText='width:100%;accent-color:#ffa21f';
+const fotos=document.querySelector('.fotos');fotos.style.cssText='display:grid;grid-template-columns:repeat(3,1fr);gap:16px';
+for(const img of fotos.querySelectorAll('img'))img.style.cssText='display:block;width:100%;height:220px;object-fit:cover';
+const canvas=document.querySelector('#mar');const mar=iniciarMar(canvas);const range=document.querySelector('#progresso');const valor=document.querySelector('#valor');range.addEventListener('input',()=>{const p=Number(range.value)/100;valor.value=`${range.value}%`;mar?.definirProgresso(p);});
+distorcaoNoHover(document.querySelectorAll('.fotos img'));
