@@ -12,8 +12,8 @@ if(window.Lenis){lenis=new window.Lenis({duration:1.05,smoothWheel:true,gestureO
 
 const wide=gsap.matchMedia();
 // Letreiro fica decorativo; o conteúdo equivalente continua disponível no HTML.
-const quadrosPT=[[['ENZO REZENDE',2]],[['DESENVOLVEDOR WEB',1],['RIO DE JANEIRO',1]],[['ESTUDANTE DE ADS',1],['VIA UVA BARRA',1]],[['6 MESES EM',1],['VANCOUVER',1]]];
-const quadrosEN=[[['ENZO REZENDE',2]],[['WEB DEVELOPER',1],['RIO DE JANEIRO',1]],[['ADS STUDENT',1],['UVA BARRA',1]],[['6 MONTHS IN',1],['VANCOUVER',1]]];
+const quadrosPT={largo:[[["ENZO REZENDE",2]],[["DESENVOLVEDOR WEB",1],["RIO DE JANEIRO",1]],[["ESTUDANTE DE ADS",1],["VIA UVA BARRA",1]],[["6 MESES EM",1],["VANCOUVER",1]]],estreito:[[["ENZO",2],["REZENDE",2]],[["DESENVOLVEDOR",1],["WEB",1],["RIO DE JANEIRO",1]],[["ESTUDANTE",1],["DE ADS",1],["VIA UVA BARRA",1]],[["6 MESES",1],["EM",1],["VANCOUVER",1]]]};
+const quadrosEN={largo:[[["ENZO REZENDE",2]],[["WEB DEVELOPER",1],["RIO DE JANEIRO",1]],[["ADS STUDENT",1],["UVA BARRA",1]],[["6 MONTHS IN",1],["VANCOUVER",1]]],estreito:[[["ENZO",2],["REZENDE",2]],[["WEB",1],["DEVELOPER",1],["RIO DE JANEIRO",1]],[["ADS",1],["STUDENT",1],["UVA BARRA",1]],[["6 MONTHS",1],["IN",1],["VANCOUVER",1]]]};
 const sign=qs('.letreiro-canvas');
 function qs(s,r=document){return r.querySelector(s)}
 let topSign=sign?criarLetreiro(sign,{quadros:quadrosPT,linha:'21',ciclo:true,interativo:true,particulas:false}):null;
