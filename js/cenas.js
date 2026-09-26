@@ -14,12 +14,14 @@ const wide=gsap.matchMedia();
 // Letreiro fica decorativo; o conteúdo equivalente continua disponível no HTML.
 const quadrosPT={largo:[[["ENZO REZENDE",2]],[["DESENVOLVEDOR WEB",1],["RIO DE JANEIRO",1]],[["ESTUDANTE DE ADS",1],["VIA UVA BARRA",1]],[["6 MESES EM",1],["VANCOUVER",1]]],estreito:[[["ENZO",2],["REZENDE",2]],[["DESENVOLVEDOR",1],["WEB",1],["RIO DE JANEIRO",1]],[["ESTUDANTE",1],["DE ADS",1],["VIA UVA BARRA",1]],[["6 MESES",1],["EM",1],["VANCOUVER",1]]]};
 const quadrosEN={largo:[[["ENZO REZENDE",2]],[["WEB DEVELOPER",1],["RIO DE JANEIRO",1]],[["ADS STUDENT",1],["UVA BARRA",1]],[["6 MONTHS IN",1],["VANCOUVER",1]]],estreito:[[["ENZO",2],["REZENDE",2]],[["WEB",1],["DEVELOPER",1],["RIO DE JANEIRO",1]],[["ADS",1],["STUDENT",1],["UVA BARRA",1]],[["6 MONTHS",1],["IN",1],["VANCOUVER",1]]]};
+const contatoPT={largo:[[["ME CHAMA",2]]],estreito:[[["ME",2],["CHAMA",2]]]};
+const contatoEN={largo:[[["SAY HELLO",2]]],estreito:[[["SAY",2],["HELLO",2]]]};
+const idiomaEN=document.documentElement.lang==='en';
 const sign=qs('.letreiro-canvas');
 function qs(s,r=document){return r.querySelector(s)}
-let topSign=sign?criarLetreiro(sign,{quadros:quadrosPT,linha:'21',ciclo:true,interativo:true,particulas:false}):null;
-const contactCanvas=qs('.contato-letreiro');let contactSign=contactCanvas?criarLetreiro(contactCanvas,{quadros:quadrosPT,linha:'21',ciclo:false,interativo:false,particulas:false}):null;
-contactSign?.mostrarTexto('');contactSign?.pausar();
-window.addEventListener('linha21:idioma',e=>{const frames=e.detail.lang==='en'?quadrosEN:quadrosPT;topSign?.trocarQuadros(frames);contactSign?.trocarQuadros(frames);});
+let topSign=sign?criarLetreiro(sign,{quadros:idiomaEN?quadrosEN:quadrosPT,linha:'',ciclo:true,interativo:true,particulas:false}):null;
+const contactCanvas=qs('.contato-letreiro');let contactSign=contactCanvas?criarLetreiro(contactCanvas,{quadros:idiomaEN?contatoEN:contatoPT,linha:'',ciclo:false,interativo:false,particulas:false}):null;
+window.addEventListener('linha21:idioma',e=>{const en=e.detail.lang==='en';topSign?.trocarQuadros(en?quadrosEN:quadrosPT);contactSign?.trocarQuadros(en?contatoEN:contatoPT);});
 
 // Letreiro se desfaz ao rolar a abertura; estado reversível pelo scrub.
 gsap.to({p:0},{p:1,ease:'none',scrollTrigger:{trigger:'#topo',start:'top top',end:'bottom top',scrub:true,onUpdate:self=>topSign?.soltar(self.progress)}});

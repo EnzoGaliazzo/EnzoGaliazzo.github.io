@@ -55,6 +55,7 @@ async function carregarMovimento(){
 }
 let movementQueued=false;const queueMovement=()=>{if(movementQueued)return;movementQueued=true;carregarMovimento();};
 ['pointerdown','keydown','wheel','touchstart'].forEach(ev=>window.addEventListener(ev,queueMovement,{once:true,passive:true}));
+window.addEventListener('load',()=>{const start=()=>queueMovement();if('requestIdleCallback'in window)requestIdleCallback(start,{timeout:1200});else setTimeout(start,500);},{once:true});
 
 function carregarSobDemanda(){
   if(!('IntersectionObserver'in window))return;
