@@ -1,0 +1,13 @@
+# Copie para wrangler.toml (que fica fora do git) e troque os valores entre <>.
+name = "orcamento-enzo"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+ORIGEM_PERMITIDA = "https://enzogaliazzo.github.io"
+EMAIL_DESTINO = "<e-mail que recebe os pedidos>"
+# EMAIL_REMETENTE = "Pedidos <pedidos@seu-dominio-verificado-no-resend>"
+
+[[kv_namespaces]]
+binding = "PEDIDOS"
+id = "<id gerado por: npx wrangler kv namespace create PEDIDOS>"
