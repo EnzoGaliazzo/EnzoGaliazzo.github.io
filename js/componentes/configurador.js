@@ -81,8 +81,13 @@ export default function ligar(formularios) {
     document.addEventListener('idioma', atualizar);
     form.addEventListener('submit', (e) => e.preventDefault());
 
-    // Depois de enviar, leva para a página de confirmação
+    // Depois de enviar, leva para a página de confirmação.
+    // Se a função de orçamento estiver ligada (data-orcamento-endpoint no form), manda uma cópia para ela.
+    const endpoint = form.dataset.orcamentoEndpoint;
     [...links.whatsapp, ...links.email].forEach((a) => a.addEventListener('click', () => {
+      if (endpoint) {
+        fetch(endpoint, { method: 'POST', keepalive: true, headers: { 'content-type': 'application/json' }, body: JSON.stringify(ler().bruto) }).catch(() => {});
+      }
       setTimeout(() => { location.href = '/quero-um-site/enviado/'; }, 900);
     }));
 

@@ -1,0 +1,6 @@
+# Segredos e arquivos locais da função de orçamento
+funcoes/orcamento/wrangler.toml
+funcoes/orcamento/.dev.vars
+.env
+.wrangler/
+node_modules/
