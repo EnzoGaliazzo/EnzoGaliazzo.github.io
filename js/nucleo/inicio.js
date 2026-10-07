@@ -25,6 +25,7 @@ const componentes = [
   ['[data-saiba-mais]', 'saiba-mais'],
   ['[data-configurador]', 'configurador'],
   ['[data-paradas]', 'paradas'],
+  ['video[data-video-auto]', 'video-auto'],
   ['.rodape-colunas', 'rodape'],
 ];
 

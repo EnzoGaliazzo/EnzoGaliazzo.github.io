@@ -34,7 +34,8 @@ js/letreiro.js          o letreiro de LED em canvas (fonte de pontos 5×7)
 i18n/en.json            textos em inglês (o português mora no HTML)
 busca/indice.json       índice da busca do topo
 funcoes/orcamento/      função da Cloudflare para guardar pedidos — preparada e DESLIGADA (veja o README dela)
-ferramentas/            scripts de manutenção (não fazem parte do site)
+ferramentas/            scripts de manutenção (não fazem parte do site): partes comuns e gravação dos vídeos
+midia/videos/           vídeos de tela da Distri Rio e seus pôsteres
 assets/r/               fotos e telas em AVIF e WebP, em várias larguras
 fontes/                 inter.woff2 + licença OFL
 ```
@@ -47,7 +48,11 @@ fontes/                 inter.woff2 + licença OFL
   ```
   para copiar para as outras páginas.
 - **Busca:** acrescente a página ou seção em `busca/indice.json` (português e inglês).
-- **Vídeos de tela:** os lugares estão marcados com comentários no HTML (`midia/videos/…`). O carrossel e o computador da inicial já tocam e pausam vídeos; basta trocar a imagem por `<video muted playsinline preload="none" poster="…">`.
+- **Vídeos de tela:** ficam em `midia/videos/` (MP4 H.264 + pôster WebP) e são gravações reais do site da Distri Rio: a busca digitando "trident", o catálogo rolando e o pedido no celular até o formulário (sem enviar nada). Para gravar de novo, com o ffmpeg instalado:
+  ```bash
+  node ferramentas/gravar-videos.mjs midia/videos
+  ```
+  Os vídeos só baixam quando chegam perto da tela (`preload="none"`), tocam sem som só enquanto aparecem e, com "reduzir movimento", ficam parados no pôster.
 
 ## O que falta preencher (Enzo)
 Procure por `[preencher` no código: respostas das Perguntas frequentes (preço, prazo, domínio, manutenção, atendimento fora do Rio), os três passos de "O que vem depois" em `/quero-um-site/enviado/` e um interesse opcional em `/sobre/`.

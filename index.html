@@ -52,7 +52,7 @@
 <!-- comum:barra -->
 <header class="barra">
   <div class="barra-linha">
-    <a class="marca" href="/" aria-label="Enzo Rezende, página inicial" data-i18n-attr="aria-label:marca.rotulo"><span class="marca-linha">21</span> Enzo Rezende</a>
+    <a class="marca" href="/" aria-label="21 Enzo Rezende, página inicial" data-i18n-attr="aria-label:marca.rotulo"><span class="marca-linha">21</span> Enzo Rezende</a>
     <nav class="barra-links" aria-label="Principal" data-i18n-attr="aria-label:nav.rotulo">
       <button type="button" data-abre="mega" aria-expanded="false" aria-controls="mega-trabalho" data-i18n="nav.trabalho">Trabalho</button>
       <a href="/quero-um-site/" data-i18n="nav.site">Quero um site</a>
@@ -123,8 +123,7 @@
   </section>
 
 
-  <!-- 2. Destaques: telas reais da Distri Rio. Cada slide pode trocar a imagem pelo vídeo de tela
-       (midia/videos/*.mp4 + .webm, com poster, muted, playsinline, preload="none"); o carrossel já toca e pausa vídeos. -->
+  <!-- 2. Destaques: vídeos reais de tela da Distri Rio (gravados com ferramentas de fora do site; o carrossel toca e pausa). -->
   <section class="secao nevoa" id="trabalho" aria-labelledby="titulo-trabalho">
     <div class="pagina">
       <div class="cabeca-secao">
@@ -133,11 +132,11 @@
       <div class="carrossel sem-js-carrossel" data-carrossel role="region" aria-roledescription="carrossel" aria-label="Destaques da Distri Rio" data-i18n-attr="aria-label:destaques.rotulo">
         <div class="carrossel-palco">
           <figure class="slide" role="group" aria-roledescription="slide" aria-label="1 de 3" data-i18n-attr="aria-label:destaques.s1">
-            <picture><source media="(max-width: 733px)" type="image/avif" srcset="/assets/r/distririo-celular-480.avif 480w, /assets/r/distririo-celular-780.avif 780w" sizes="100vw"><source media="(max-width: 733px)" type="image/webp" srcset="/assets/r/distririo-celular-480.webp 480w, /assets/r/distririo-celular-780.webp 780w" sizes="100vw"><source type="image/avif" srcset="/assets/r/distririo-inicio-480.avif 480w, /assets/r/distririo-inicio-960.avif 960w, /assets/r/distririo-inicio-1600.avif 1600w" sizes="(min-width: 1068px) 1180px, 100vw"><img src="/assets/r/distririo-inicio-960.webp" srcset="/assets/r/distririo-inicio-480.webp 480w, /assets/r/distririo-inicio-960.webp 960w, /assets/r/distririo-inicio-1600.webp 1600w" sizes="(min-width: 1068px) 1180px, 100vw" width="1600" height="1000" loading="lazy" decoding="async" alt="Página inicial da Distri Rio, com a busca no topo" data-i18n-attr="alt:destaques.a1"></picture>
+            <video class="video-esquerda" muted playsinline loop preload="none" poster="/midia/videos/busca.webp" width="1280" height="800" aria-label="Vídeo: a busca da Distri Rio encontrando os produtos Trident enquanto o nome é digitado" data-i18n-attr="aria-label:destaques.a1"><source src="/midia/videos/busca.mp4" type="video/mp4"></video>
             <figcaption class="slide-legenda"><p>Distri Rio</p><p data-i18n="destaques.l1">Busca no catálogo inteiro, com atalho Ctrl+K.</p></figcaption>
           </figure>
           <figure class="slide" role="group" aria-roledescription="slide" aria-label="2 de 3" data-i18n-attr="aria-label:destaques.s2">
-            <picture><source type="image/avif" srcset="/assets/r/distririo-catalogo-480.avif 480w, /assets/r/distririo-catalogo-960.avif 960w, /assets/r/distririo-catalogo-1600.avif 1600w" sizes="(min-width: 1068px) 1180px, 100vw"><img src="/assets/r/distririo-catalogo-960.webp" srcset="/assets/r/distririo-catalogo-480.webp 480w, /assets/r/distririo-catalogo-960.webp 960w, /assets/r/distririo-catalogo-1600.webp 1600w" sizes="(min-width: 1068px) 1180px, 100vw" width="1600" height="1000" loading="lazy" decoding="async" alt="Catálogo da Distri Rio com filtros por seção e por marca" data-i18n-attr="alt:destaques.a2"></picture>
+            <video muted playsinline loop preload="none" poster="/midia/videos/catalogo.webp" width="1280" height="800" aria-label="Vídeo: o catálogo da Distri Rio rolando, com filtros por seção e por marca" data-i18n-attr="aria-label:destaques.a2"><source src="/midia/videos/catalogo.mp4" type="video/mp4"></video>
             <figcaption class="slide-legenda"><p>Distri Rio</p><p data-i18n="destaques.l2">333 produtos, filtrados por seção e por marca.</p></figcaption>
           </figure>
           <figure class="slide" role="group" aria-roledescription="slide" aria-label="3 de 3" data-i18n-attr="aria-label:destaques.s3">
@@ -179,8 +178,7 @@
     </div>
   </section>
 
-  <!-- 4. O computador que levanta com a rolagem. Quando gravado, o vídeo do catálogo rolando entra no lugar
-       da imagem: <video data-video-rolagem muted playsinline preload="none" poster="…"> (o tempo segue a rolagem). -->
+  <!-- 4. O computador que levanta com a rolagem; o tempo do vídeo do catálogo acompanha a rolagem. -->
   <section class="secao nevoa centro" aria-labelledby="titulo-mockup">
     <div class="pagina">
       <div class="cabeca-secao">
@@ -191,7 +189,7 @@
       <div class="mockup" data-mockup>
         <div class="mockup-corpo">
           <div class="mockup-tela">
-            <picture><source type="image/avif" srcset="/assets/r/distririo-catalogo-480.avif 480w, /assets/r/distririo-catalogo-960.avif 960w, /assets/r/distririo-catalogo-1600.avif 1600w" sizes="(min-width: 1068px) 920px, 100vw"><img src="/assets/r/distririo-catalogo-960.webp" srcset="/assets/r/distririo-catalogo-480.webp 480w, /assets/r/distririo-catalogo-960.webp 960w, /assets/r/distririo-catalogo-1600.webp 1600w" sizes="(min-width: 1068px) 920px, 100vw" width="1600" height="1000" loading="lazy" decoding="async" alt="Catálogo da Distri Rio aberto no computador" data-i18n-attr="alt:mockup.alt"></picture>
+            <video muted playsinline loop preload="none" data-video-rolagem poster="/midia/videos/catalogo.webp" width="1280" height="800" aria-label="Vídeo: o catálogo da Distri Rio rolando no computador" data-i18n-attr="aria-label:mockup.alt"><source src="/midia/videos/catalogo.mp4" type="video/mp4"></video>
           </div>
           <div class="mockup-base"></div>
         </div>

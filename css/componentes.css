@@ -28,7 +28,7 @@
   .barra-acoes { gap: 2px; }
   .barra-icone { width: 36px; }
   .idiomas button { min-width: 34px; }
-  .barra .botao-falar span { display: none; }
+  .barra .botao-falar span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .barra .botao-falar { padding: 6px 10px; margin-left: 2px; }
 }
 
@@ -79,7 +79,15 @@
   position: relative; width: 100%; max-width: 860px; background: #0b0b0c; border-radius: var(--raio-m);
   padding: clamp(12px, 2vw, 22px); box-shadow: 0 0 0 1px #2a2a2c, 0 40px 120px -50px var(--led-brilho);
 }
+/* O painel reserva a altura exata que o letreiro vai ter (proporções medidas), para nada pular quando ele acende.
+   O letreiro troca para os quadros largos quando o canvas passa de 560 px: por isso a container query. */
+.painel-led { container-type: inline-size; }
 .letreiro-canvas { width: 100%; height: auto; min-height: 60px; }
+.painel-led .letreiro-canvas { min-height: 0; aspect-ratio: 3.834; }
+.painel-led .letreiro-canvas[data-letreiro="chama"] { aspect-ratio: 3.033; }
+.painel-led .letreiro-canvas[data-letreiro="erro"] { aspect-ratio: 3.7; }
+@container (min-width: 560px) { .painel-led .letreiro-canvas[data-letreiro="topo"] { aspect-ratio: 10.69; } }
+.painel-led .letreiro-texto-reserva { position: absolute; inset: 0; justify-content: center; }
 .letreiro-texto-reserva { display: flex; align-items: center; justify-content: center; gap: 0.5em; color: var(--led); font-family: var(--mono); font-weight: 700; font-size: clamp(28px, 6vw, 64px); letter-spacing: 0.08em; min-height: 1.4em; }
 .letreiro-ativo .letreiro-texto-reserva { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 .hero .titulo-xl { margin-top: 8px; }
@@ -102,11 +110,13 @@
 .slide-legenda p:first-child { color: var(--destaque); font-weight: 600; font-size: var(--pequeno); margin-bottom: 6px; }
 .slide-legenda p:last-child { font-size: var(--titulo-s); font-weight: 600; letter-spacing: -0.01em; line-height: 1.15; }
 .carrossel-controles { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 24px; }
-.pilulas { display: flex; align-items: center; gap: 10px; padding: 14px 18px; border-radius: var(--pilula); background: rgba(0, 0, 0, 0.07); }
-.pilulas button { position: relative; width: 8px; height: 8px; padding: 0; border: 0; border-radius: var(--pilula); background: #86868b; cursor: pointer; overflow: hidden; transition: width var(--medio) var(--facil); }
-.pilulas button::before { content: ""; position: absolute; inset: -18px -4px; }
-.pilulas button[aria-current="true"] { width: 48px; background: #d2d2d7; }
-.pilulas button[aria-current="true"] span { position: absolute; inset: 0; background: var(--grafite); transform-origin: left; transform: scaleX(var(--progresso, 0)); }
+/* Cada pílula é um botão de 24 px (área de toque); o ponto visível é o span de dentro */
+.pilulas { display: flex; align-items: center; gap: 2px; padding: 10px 12px; border-radius: var(--pilula); background: rgba(0, 0, 0, 0.07); }
+.pilulas button { display: grid; place-items: center; width: 24px; height: 24px; padding: 0 8px; border: 0; background: none; cursor: pointer; transition: width var(--medio) var(--facil); }
+.pilulas button span { position: relative; display: block; width: 100%; height: 8px; border-radius: var(--pilula); background: #86868b; overflow: hidden; }
+.pilulas button[aria-current="true"] { width: 64px; }
+.pilulas button[aria-current="true"] span { background: #d2d2d7; }
+.pilulas button[aria-current="true"] span::after { content: ""; position: absolute; inset: 0; background: var(--grafite); transform-origin: left; transform: scaleX(var(--progresso, 0)); }
 .botao-redondo { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(0, 0, 0, 0.07); color: var(--grafite); cursor: pointer; }
 .botao-redondo:hover { background: rgba(0, 0, 0, 0.12); }
 .escura .botao-redondo { background: rgba(255, 255, 255, 0.12); color: var(--nevoa); }
@@ -203,10 +213,10 @@
 .galeria-led { display: grid; place-items: center; aspect-ratio: 1; border-radius: var(--raio-m); background: #0b0b0c; }
 .galeria-led canvas { width: 80%; }
 .galeria-controles { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 20px; }
-.galeria-pontos { display: flex; gap: 8px; }
-.galeria-pontos button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: #c7c7cc; cursor: pointer; position: relative; }
-.galeria-pontos button::before { content: ""; position: absolute; inset: -18px; }
-.galeria-pontos [aria-current="true"] { background: var(--grafite); }
+.galeria-pontos { display: flex; }
+.galeria-pontos button { display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; }
+.galeria-pontos button::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #c7c7cc; }
+.galeria-pontos [aria-current="true"]::after { background: var(--grafite); }
 .galeria-setas { display: flex; gap: 12px; }
 @media (max-width: 733px) { .galeria-trilho { grid-auto-columns: 82%; } }
 
@@ -360,7 +370,7 @@
 .ficha-stack { margin-top: 24px; }
 .celular-destaque { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(32px, 6vw, 96px); align-items: center; }
 .aparelho-solo { width: min(320px, 70vw); margin-inline: auto; background: var(--grafite); border-radius: 40px; padding: 8px; box-shadow: 0 0 0 1px #2a2a2c, 0 50px 100px -40px var(--led-brilho); }
-.aparelho-solo img { border-radius: 33px; aspect-ratio: 9 / 19.5; object-fit: cover; object-position: top; }
+.aparelho-solo img, .aparelho-solo video { width: 100%; border-radius: 33px; aspect-ratio: 9 / 19.5; object-fit: cover; object-position: top; background: #000; }
 @media (max-width: 733px) { .celular-destaque { grid-template-columns: minmax(0, 1fr); } }
 
 /* Quero um site, Orçamento enviado, Sobre, Contato, Perguntas e 404: complementos */
@@ -386,3 +396,6 @@
 .mov .contato-sem-js, .sem-mov .contato-sem-js { display: none; }
 .erro .pagina { display: flex; flex-direction: column; align-items: center; gap: 18px; padding-block: 64px; }
 .erro .painel-led-pequeno { margin-bottom: 8px; width: 100%; }
+
+/* Vídeos de tela */
+.slide video.video-esquerda { object-position: left top; }

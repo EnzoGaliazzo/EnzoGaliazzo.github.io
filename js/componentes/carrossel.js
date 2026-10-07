@@ -8,7 +8,7 @@ export default function ligar(carrosseis, { reduzir }) {
     const botaoPausa = carrossel.querySelector('[data-pausa]');
     let atual = 0;
     let tocando = !reduzir;
-    let visivel = true;
+    let visivel = false; // só toca (e só baixa o vídeo) depois que o carrossel aparece na tela
     let inicio = performance.now();
     let decorrido = 0;
     let quadro = 0;

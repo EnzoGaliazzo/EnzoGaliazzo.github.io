@@ -19,6 +19,7 @@
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/fontes/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/midia/videos/busca.webp" as="image" fetchpriority="high">
 <link rel="stylesheet" href="/css/tokens.css">
 <link rel="stylesheet" href="/css/base.css">
 <link rel="stylesheet" href="/css/componentes.css">
@@ -45,7 +46,7 @@
 <!-- comum:barra -->
 <header class="barra">
   <div class="barra-linha">
-    <a class="marca" href="/" aria-label="Enzo Rezende, página inicial" data-i18n-attr="aria-label:marca.rotulo"><span class="marca-linha">21</span> Enzo Rezende</a>
+    <a class="marca" href="/" aria-label="21 Enzo Rezende, página inicial" data-i18n-attr="aria-label:marca.rotulo"><span class="marca-linha">21</span> Enzo Rezende</a>
     <nav class="barra-links" aria-label="Principal" data-i18n-attr="aria-label:nav.rotulo">
       <button type="button" data-abre="mega" aria-expanded="false" aria-controls="mega-trabalho" data-i18n="nav.trabalho">Trabalho</button>
       <a href="/quero-um-site/" data-i18n="nav.site">Quero um site</a>
@@ -110,8 +111,7 @@
       <div class="mockup mockup-topo" data-mockup>
         <div class="mockup-corpo">
           <div class="mockup-tela">
-            <!-- Quando gravado, entra aqui o vídeo da busca digitando "trident" (midia/videos/busca.mp4 + .webm, com poster). -->
-            <picture><source type="image/avif" srcset="/assets/r/distririo-inicio-480.avif 480w, /assets/r/distririo-inicio-960.avif 960w, /assets/r/distririo-inicio-1600.avif 1600w" sizes="(min-width: 1068px) 920px, 92vw"><img src="/assets/r/distririo-inicio-960.webp" srcset="/assets/r/distririo-inicio-480.webp 480w, /assets/r/distririo-inicio-960.webp 960w, /assets/r/distririo-inicio-1600.webp 1600w" sizes="(min-width: 1068px) 920px, 92vw" width="1600" height="1000" fetchpriority="high" decoding="async" alt="Página inicial da Distri Rio no computador" data-i18n-attr="alt:distri.a.inicio"></picture>
+            <video muted playsinline loop preload="none" data-video-auto poster="/midia/videos/busca.webp" width="1280" height="800" aria-label="Vídeo: a busca da Distri Rio encontrando os produtos Trident enquanto o nome é digitado" data-i18n-attr="aria-label:destaques.a1"><source src="/midia/videos/busca.mp4" type="video/mp4"></video>
           </div>
           <div class="mockup-base"></div>
         </div>
@@ -209,7 +209,7 @@
     </div>
   </section>
 
-  <!-- O pedido no celular. Quando gravado, o vídeo da lista indo até o botão do WhatsApp (sem enviar) entra no lugar da tela. -->
+  <!-- O pedido no celular: vídeo real, do produto até o formulário (gravado sem enviar nada). -->
   <section class="secao escura" aria-labelledby="titulo-celular">
     <div class="pagina celular-destaque">
       <div class="celular-destaque-texto">
@@ -218,7 +218,7 @@
         <p class="corpo-l fraco" data-revelar data-i18n="distri.cel.texto">No celular, cada produto tem a sua página, com a foto, a marca, a linha e o botão de adicionar à lista.</p>
       </div>
       <div class="aparelho-solo" data-revelar>
-        <picture><source type="image/avif" srcset="/assets/r/distririo-produto-480.avif 480w, /assets/r/distririo-produto-780.avif 780w" sizes="(min-width: 734px) 320px, 70vw"><img src="/assets/r/distririo-produto-480.webp" srcset="/assets/r/distririo-produto-480.webp 480w, /assets/r/distririo-produto-780.webp 780w" sizes="(min-width: 734px) 320px, 70vw" width="780" height="1688" loading="lazy" decoding="async" alt="Página de produto da Distri Rio no celular" data-i18n-attr="alt:distri.a.produto"></picture>
+        <video muted playsinline loop preload="none" data-video-auto poster="/midia/videos/pedido.webp" width="720" height="1558" aria-label="Vídeo: no celular, o Trident 5S vai para a lista e a lista segue para o formulário do pedido" data-i18n-attr="aria-label:distri.a.pedido"><source src="/midia/videos/pedido.mp4" type="video/mp4"></video>
       </div>
     </div>
   </section>

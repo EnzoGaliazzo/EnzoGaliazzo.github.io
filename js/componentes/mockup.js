@@ -13,7 +13,10 @@ export default function ligar(mockups, { reduzir }) {
       const pronto = () => { duracao = video.duration || 0; };
       if (video.readyState >= 1) pronto(); else video.addEventListener('loadedmetadata', pronto, { once: true });
     }
+    let carregou = false;
     aoRolar(mockup, ({ passagem }) => {
+      // O vídeo vem com preload="none"; só baixa quando o computador entra na tela
+      if (video && !carregou && passagem > 0) { carregou = true; video.preload = 'auto'; video.load(); }
       const p = suavizar(Math.min(1, passagem / 0.55));
       corpo.style.setProperty('--giro', `${(1 - p) * 32}deg`);
       if (video && duracao) {
