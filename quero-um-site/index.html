@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Quero um site · Enzo Rezende</title>
+<meta name="description" content="Site institucional, catálogo com pedido pelo WhatsApp ou os dois. Monte o pedido de orçamento e mande pelo WhatsApp ou por e-mail para o Enzo Rezende.">
+<link rel="canonical" href="https://enzogaliazzo.github.io/quero-um-site/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://enzogaliazzo.github.io/quero-um-site/">
+<meta property="og:site_name" content="Enzo Rezende">
+<meta property="og:title" content="Quero um site · Enzo Rezende">
+<meta property="og:description" content="Um site que trabalha pelo seu negócio. Monte o pedido e mande pelo WhatsApp.">
+<meta property="og:image" content="https://enzogaliazzo.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f5f5f7">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fontes/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Criação de sites",
+  "serviceType": "Criação de sites",
+  "url": "https://enzogaliazzo.github.io/quero-um-site/",
+  "provider": { "@type": "Person", "name": "Enzo Rezende", "url": "https://enzogaliazzo.github.io/" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Tipos de site",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Site institucional" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Catálogo com pedido pelo WhatsApp" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Site completo: institucional e catálogo" } }
+    ]
+  }
+}
+</script>
+<script type="module" src="/js/nucleo/inicio.js"></script>
+</head>
+<body data-pagina="site">
+<a class="pular" href="#conteudo" data-i18n="pular">Pular para o conteúdo</a>
+
+<!-- comum:barra -->
+<header class="barra">
+  <div class="barra-linha">
+    <a class="marca" href="/" aria-label="Enzo Rezende, página inicial" data-i18n-attr="aria-label:marca.rotulo"><span class="marca-linha">21</span> Enzo Rezende</a>
+    <nav class="barra-links" aria-label="Principal" data-i18n-attr="aria-label:nav.rotulo">
+      <button type="button" data-abre="mega" aria-expanded="false" aria-controls="mega-trabalho" data-i18n="nav.trabalho">Trabalho</button>
+      <a href="/quero-um-site/" aria-current="page" data-i18n="nav.site">Quero um site</a>
+      <a href="/sobre/" data-i18n="nav.sobre">Sobre</a>
+      <a href="/contato/" data-i18n="nav.contato">Contato</a>
+    </nav>
+    <div class="barra-acoes">
+      <button type="button" class="barra-icone" data-abre="busca" aria-expanded="false" aria-controls="painel-busca" aria-label="Buscar no site" data-i18n-attr="aria-label:busca.abrir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <div class="idiomas" role="group" aria-label="Idioma" data-i18n-attr="aria-label:idioma.rotulo"><button type="button" data-idioma="pt" aria-pressed="true" lang="pt-BR">PT</button><button type="button" data-idioma="en" aria-pressed="false" lang="en">EN</button></div>
+      <button type="button" class="barra-icone barra-menu" data-abre="menu" aria-expanded="false" aria-controls="menu-celular" aria-label="Abrir o menu" data-i18n-attr="aria-label:menu.abrir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
+      <a class="botao botao-destaque botao-pequeno botao-falar" data-contato="whatsapp" href="https://wa.me/5521920000983?text=Oi%2C%20Enzo!%20Vi%20seu%20site%20e%20queria%20conversar." rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5 5.3 16A8 8 0 1 1 8 18.7z"/></svg><span data-i18n="nav.falar">Falar comigo</span></a>
+    </div>
+  </div>
+  <div class="mega" id="mega-trabalho" hidden>
+    <div class="mega-grade">
+      <div><h2 data-i18n="mega.projetos">Projeto</h2><a href="/distri-rio/">Distri Rio</a><p data-i18n="mega.distri">Site e catálogo de uma distribuidora, no ar.</p></div>
+      <div><h2 data-i18n="mega.estudo">Estudo</h2><a href="https://enzogaliazzo.github.io/ProjetoAlura/" rel="noopener" data-i18n="mega.series">Catálogo de Séries</a><p data-i18n="mega.series.texto">Projeto da Alura com dados em JSON.</p></div>
+      <div><h2 data-i18n="mega.proximo">Em breve</h2><a href="/#estudo" data-i18n="mega.proximo.link">Próximo projeto</a><p data-i18n="mega.proximo.texto">O próximo trabalho entra aqui.</p></div>
+    </div>
+  </div>
+  <nav class="gaveta-menu" id="menu-celular" aria-label="Menu" data-i18n-attr="aria-label:menu.rotulo" hidden>
+    <a href="/distri-rio/">Distri Rio</a>
+    <a href="/quero-um-site/" aria-current="page" data-i18n="nav.site">Quero um site</a>
+    <a href="/sobre/" data-i18n="nav.sobre">Sobre</a>
+    <a href="/contato/" data-i18n="nav.contato">Contato</a>
+    <a href="/perguntas/" data-i18n="nav.perguntas">Perguntas</a>
+  </nav>
+  <div class="busca-painel" id="painel-busca" role="search" hidden>
+    <div class="busca-caixa">
+      <label for="campo-busca" data-i18n="busca.rotulo">Buscar no site</label>
+      <input id="campo-busca" type="search" autocomplete="off" placeholder="Distri Rio, currículo, Vancouver…" data-i18n-attr="placeholder:busca.dica">
+      <ul class="busca-sugestoes" aria-live="polite"></ul>
+    </div>
+  </div>
+</header>
+<!-- /comum:barra -->
+
+<main id="conteudo">
+  <nav class="local" aria-label="Nesta página" data-i18n-attr="aria-label:local.rotulo">
+    <div class="local-linha">
+      <p class="local-nome" data-i18n="nav.site">Quero um site</p>
+      <div class="local-abas">
+        <a href="#planos" data-i18n="site.aba.planos">Planos</a>
+        <a href="#montar" data-i18n="site.aba.montar">Montar o pedido</a>
+        <a href="/perguntas/" data-i18n="nav.perguntas">Perguntas</a>
+      </div>
+      <button type="button" class="botao botao-contorno botao-pequeno" data-abre-gaveta><span data-i18n="site.seu">Seu pedido</span> <span class="contador-pedido" data-contador-pedido>1</span></button>
+      <a class="botao botao-escuro botao-pequeno" href="#montar" data-i18n="site.pedir">Pedir orçamento</a>
+    </div>
+  </nav>
+
+  <section class="cabeca-pagina nevoa centro" aria-labelledby="titulo-site">
+    <div class="pagina">
+      <p class="rotulo" data-i18n="planos.rotulo">Para o seu negócio</p>
+      <h1 class="titulo-xl" id="titulo-site" data-i18n="site.titulo">Um site que trabalha pelo seu negócio.</h1>
+      <p class="corpo-l fraco" data-i18n="site.intro">Escolha o tipo de site, monte o pedido e mande pelo WhatsApp ou por e-mail. O orçamento sai na conversa, depois que eu entender o que você vende.</p>
+    </div>
+  </section>
+
+  <!-- Planos lado a lado, sem preço -->
+  <section class="secao nevoa" id="planos" aria-labelledby="titulo-planos">
+    <div class="pagina">
+      <h2 class="sr" id="titulo-planos" data-i18n="site.aba.planos">Planos</h2>
+      <div class="planos">
+        <article class="plano" data-revelar>
+          <h3 data-i18n="plano1.t">Institucional</h3>
+          <p class="fraco" data-i18n="site.p1.d">As páginas da empresa, para ser achada e passar confiança.</p>
+          <ul>
+            <li data-i18n="site.p1.i1">Quem somos, serviços, contato e trabalhe conosco</li>
+            <li data-i18n="site.p1.i2">Formulário que chega no seu e-mail</li>
+            <li data-i18n="site.p1.i3">SEO técnico: sitemap e dados estruturados</li>
+            <li data-i18n="site.p1.i4">Aviso de cookies conforme a LGPD</li>
+          </ul>
+          <p class="plano-prova" data-i18n="plano1.p">Na Distri Rio: 9 páginas principais.</p>
+        </article>
+        <article class="plano plano-destaque" data-revelar data-revelar-atraso="1">
+          <h3 data-i18n="plano2.t">Catálogo com pedido</h3>
+          <p class="fraco" data-i18n="site.p2.d">Seus produtos na vitrine e o pedido chegando pronto no WhatsApp.</p>
+          <ul>
+            <li data-i18n="site.p2.i1">Catálogo por seção e por marca</li>
+            <li data-i18n="site.p2.i2">Busca e filtros</li>
+            <li data-i18n="site.p2.i3">Lista de pedido que sai pronta no WhatsApp</li>
+            <li data-i18n="site.p2.i4">Uma página por produto, boa para o Google</li>
+          </ul>
+          <p class="plano-prova" data-i18n="plano2.p">Na Distri Rio: 333 produtos.</p>
+        </article>
+        <article class="plano" data-revelar data-revelar-atraso="2">
+          <h3 data-i18n="plano3.t">Completo</h3>
+          <p class="fraco" data-i18n="site.p3.d">Institucional e catálogo no mesmo site.</p>
+          <ul>
+            <li data-i18n="site.p3.i1">Tudo do Institucional</li>
+            <li data-i18n="site.p3.i2">Tudo do Catálogo com pedido</li>
+            <li data-i18n="site.p3.i3">Conferência automática antes de cada publicação</li>
+          </ul>
+          <p class="plano-prova" data-i18n="site.p3.p">É o que a Distri Rio tem.</p>
+        </article>
+      </div>
+      <p class="botoes botoes-centro planos-ver"><a class="botao botao-contorno" href="/distri-rio/" data-i18n="modal.projeto">Ver o projeto completo</a></p>
+    </div>
+  </section>
+
+  <!-- Configurador: o resumo ao lado atualiza enquanto a pessoa escolhe -->
+  <section class="secao clara" id="montar" aria-labelledby="titulo-montar">
+    <div class="pagina">
+      <div class="cabeca-secao">
+        <p class="rotulo" data-i18n="site.aba.montar">Montar o pedido</p>
+        <h2 class="titulo-m" id="titulo-montar" data-revelar="desfoque" data-i18n="site.montar.titulo">Quatro escolhas e pronto.</h2>
+      </div>
+      <div class="config">
+        <form class="config-passos" data-configurador novalidate>
+          <fieldset class="config-passo">
+            <legend><span class="passo-num">1</span> <span data-i18n="site.l1">Qual site?</span></legend>
+            <div class="opcoes opcoes-3">
+              <label class="opcao"><input type="radio" name="plano" value="institucional"><span data-rotulo data-i18n="plano1.t">Institucional</span></label>
+              <label class="opcao"><input type="radio" name="plano" value="catalogo" checked><span data-rotulo data-i18n="plano2.t">Catálogo com pedido</span></label>
+              <label class="opcao"><input type="radio" name="plano" value="completo"><span data-rotulo data-i18n="plano3.t">Completo</span></label>
+            </div>
+          </fieldset>
+          <fieldset class="config-passo">
+            <legend><span class="passo-num">2</span> <span data-i18n="site.l2">Quantas páginas, mais ou menos?</span></legend>
+            <div class="opcoes opcoes-3">
+              <label class="opcao"><input type="radio" name="paginas" value="ate-5" checked><span data-rotulo data-i18n="site.pg1">Até 5</span></label>
+              <label class="opcao"><input type="radio" name="paginas" value="6-a-10"><span data-rotulo data-i18n="site.pg2">De 6 a 10</span></label>
+              <label class="opcao"><input type="radio" name="paginas" value="mais-de-10"><span data-rotulo data-i18n="site.pg3">Mais de 10</span></label>
+            </div>
+            <p class="dica fraco" data-i18n="site.pg.dica">Num catálogo, conte as páginas fixas; cada produto ganha a sua sozinho.</p>
+          </fieldset>
+          <fieldset class="config-passo">
+            <legend><span class="passo-num">3</span> <span data-i18n="site.l3">Algum extra?</span></legend>
+            <div class="opcoes">
+              <label class="opcao"><input type="checkbox" name="extras" value="ingles"><span data-rotulo data-i18n="site.e1">Versão em inglês</span><small data-i18n="site.e1.d">como este site</small></label>
+              <label class="opcao"><input type="checkbox" name="extras" value="formulario"><span data-rotulo data-i18n="site.e2">Formulário de contato</span><small data-i18n="site.e2.d">chega no seu e-mail</small></label>
+              <label class="opcao"><input type="checkbox" name="extras" value="catalogo"><span data-rotulo data-i18n="site.e3">Catálogo de produtos</span><small data-i18n="site.e3.d">por seção e por marca</small></label>
+              <label class="opcao"><input type="checkbox" name="extras" value="whatsapp"><span data-rotulo data-i18n="site.e4">Pedido pelo WhatsApp</span><small data-i18n="site.e4.d">a lista sai pronta</small></label>
+            </div>
+          </fieldset>
+          <fieldset class="config-passo">
+            <legend><span class="passo-num">4</span> <span data-i18n="site.l4">Sobre você</span></legend>
+            <div class="campos">
+              <label class="campo"><span data-i18n="site.c.nome">Seu nome</span><input name="nome" autocomplete="name"></label>
+              <label class="campo"><span data-i18n="site.c.empresa">Empresa</span><input name="empresa" autocomplete="organization"></label>
+              <label class="campo"><span>WhatsApp</span><input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel"></label>
+              <label class="campo"><span>E-mail</span><input name="email" type="email" autocomplete="email"></label>
+              <label class="campo campo-inteiro"><span data-i18n="site.c.vende">O que você vende?</span><input name="vende"></label>
+              <label class="campo campo-inteiro"><span data-i18n="site.c.msg">Quer contar mais alguma coisa?</span><textarea name="mensagem" rows="4"></textarea></label>
+            </div>
+            <p class="dica fraco" data-i18n="site.c.privacidade">Nada é enviado daqui: os dados só vão na mensagem que você mesmo manda.</p>
+          </fieldset>
+        </form>
+
+        <aside class="resumo" aria-labelledby="titulo-resumo">
+          <h2 class="bloco-rotulo" id="titulo-resumo" data-i18n="site.seu">Seu pedido</h2>
+          <p class="resumo-plano" data-resumo="plano" aria-live="polite">Catálogo com pedido</p>
+          <p><span data-i18n="site.r.paginas">Páginas:</span> <span data-resumo="paginas">Até 5</span></p>
+          <p class="fraco" data-resumo="extras">Sem extras</p>
+          <a class="botao botao-whats" data-enviar="whatsapp" href="https://wa.me/5521920000983?text=Oi%2C%20Enzo!%20Quero%20um%20site%20para%20o%20meu%20neg%C3%B3cio." rel="noopener" data-i18n="site.enviar.whats">Enviar pelo WhatsApp</a>
+          <a class="botao botao-escuro" data-enviar="email" href="/contato/#cliente" data-i18n="site.enviar.email">Enviar por e-mail</a>
+          <p class="resumo-aviso" data-i18n="site.aviso">Sem preço por aqui: o orçamento sai na conversa. O pedido fica guardado neste navegador até você enviar.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao nevoa centro" aria-labelledby="titulo-duvida">
+    <div class="pagina">
+      <h2 class="titulo-s" id="titulo-duvida" data-i18n="site.duvida">Ficou alguma dúvida?</h2>
+      <p class="botoes botoes-centro"><a class="botao botao-escuro" href="/perguntas/" data-i18n="site.duvida.botao">Ver as perguntas frequentes</a></p>
+    </div>
+  </section>
+</main>
+
+<!-- Gaveta "Seu pedido": o mesmo resumo, aberto de qualquer ponto da página -->
+<dialog class="gaveta" id="gaveta-pedido" aria-labelledby="titulo-gaveta">
+  <div class="gaveta-topo">
+    <h2 class="titulo-s" id="titulo-gaveta" data-i18n="site.seu">Seu pedido</h2>
+    <button type="button" class="botao-redondo" data-fechar aria-label="Fechar" data-i18n-attr="aria-label:fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <p class="resumo-plano" data-resumo="plano">Catálogo com pedido</p>
+  <p><span data-i18n="site.r.paginas">Páginas:</span> <span data-resumo="paginas">Até 5</span></p>
+  <p class="fraco" data-resumo="extras">Sem extras</p>
+  <div class="gaveta-rodape">
+    <a class="botao botao-whats" data-enviar="whatsapp" href="https://wa.me/5521920000983?text=Oi%2C%20Enzo!%20Quero%20um%20site%20para%20o%20meu%20neg%C3%B3cio." rel="noopener" data-i18n="site.enviar.whats">Enviar pelo WhatsApp</a>
+    <a class="botao botao-escuro" data-enviar="email" href="/contato/#cliente" data-i18n="site.enviar.email">Enviar por e-mail</a>
+    <a class="botao botao-contorno" href="#montar" data-fechar data-i18n="site.editar">Editar o pedido</a>
+  </div>
+</dialog>
+
+<footer class="rodape">
+  <div class="pagina">
+    <p class="rodape-trilha"><a href="/" data-i18n="trilha.inicio">Início</a><span aria-current="page" data-i18n="nav.site">Quero um site</span></p>
+<!-- comum:rodape -->
+    <nav class="rodape-colunas" aria-label="Mapa do site" data-i18n-attr="aria-label:rodape.mapa">
+      <details open><summary data-i18n="nav.trabalho">Trabalho</summary><ul><li><a href="/distri-rio/">Distri Rio</a></li><li><a href="https://enzogaliazzo.github.io/ProjetoAlura/" rel="noopener" data-i18n="mega.series">Catálogo de Séries</a></li></ul></details>
+      <details open><summary data-i18n="planos.rotulo">Para o seu negócio</summary><ul><li><a href="/quero-um-site/" data-i18n="nav.site">Quero um site</a></li><li><a href="/perguntas/" data-i18n="nav.perguntas">Perguntas</a></li></ul></details>
+      <details open><summary data-i18n="nav.sobre">Sobre</summary><ul><li><a href="/sobre/" data-i18n="rodape.vida">UVA, Vancouver e o mar</a></li><li><a href="/curriculo.html" data-i18n="rodape.curriculo">Currículo</a></li></ul></details>
+      <details open><summary data-i18n="nav.contato">Contato</summary><ul><li><a href="/contato/" data-i18n="rodape.falar">Falar comigo</a></li><li><a href="https://www.linkedin.com/in/enzorezende07/" rel="noopener">LinkedIn</a></li><li><a href="https://github.com/EnzoGaliazzo" rel="noopener">GitHub</a></li><li><a href="https://www.instagram.com/galiaco0/" rel="noopener">Instagram</a></li></ul></details>
+    </nav>
+    <div class="rodape-contato">
+      <a class="botao botao-escuro botao-pequeno" data-contato="linkedin" href="https://www.linkedin.com/in/enzorezende07/" rel="noopener">LinkedIn</a>
+      <a class="botao botao-escuro botao-pequeno" data-contato="email" data-email href="/contato/"><span data-email-texto>enzogaliaco29 (arroba) gmail.com</span></a>
+      <a class="botao botao-escuro botao-pequeno" data-contato="curriculo" href="/curriculo-enzo-rezende.pdf" data-i18n="rodape.pdf" data-i18n-attr="href:rodape.pdf.link">Currículo em PDF</a>
+      <a class="botao botao-whats botao-pequeno" data-contato="orcamento" href="https://wa.me/5521920000983?text=Oi%2C%20Enzo!%20Quero%20um%20site%20para%20o%20meu%20neg%C3%B3cio." rel="noopener" data-i18n="rodape.orcamento">Pedir orçamento no WhatsApp</a>
+    </div>
+    <p class="rodape-legal" data-i18n="rodape.legal">Enzo Rezende · Rio de Janeiro. Feito em HTML, CSS e JavaScript, sem framework. O 21 do letreiro é o DDD daqui.</p>
+<!-- /comum:rodape -->
+  </div>
+</footer>
+</body>
+</html>

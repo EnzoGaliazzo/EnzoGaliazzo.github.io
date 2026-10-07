@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Sobre · Enzo Rezende</title>
+<meta name="description" content="Enzo Rezende: desenvolvedor web do Rio, estudante de ADS na UVA, seis meses em Vancouver com curso de inglês e trabalho, inglês B2 e bodyboard no Secreto.">
+<link rel="canonical" href="https://enzogaliazzo.github.io/sobre/">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://enzogaliazzo.github.io/sobre/">
+<meta property="og:site_name" content="Enzo Rezende">
+<meta property="og:title" content="Sobre · Enzo Rezende">
+<meta property="og:description" content="Do Rio a Vancouver e de volta.">
+<meta property="og:image" content="https://enzogaliazzo.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fontes/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<script type="module" src="/js/nucleo/inicio.js"></script>
+</head>
+<body data-pagina="sobre">
+<a class="pular" href="#conteudo" data-i18n="pular">Pular para o conteúdo</a>
+
+<!-- comum:barra -->
+<header class="barra">
+  <div class="barra-linha">
+    <a class="marca" href="/" aria-label="Enzo Rezende, página inicial" data-i18n-attr="aria-label:marca.rotulo"><span class="marca-linha">21</span> Enzo Rezende</a>
+    <nav class="barra-links" aria-label="Principal" data-i18n-attr="aria-label:nav.rotulo">
+      <button type="button" data-abre="mega" aria-expanded="false" aria-controls="mega-trabalho" data-i18n="nav.trabalho">Trabalho</button>
+      <a href="/quero-um-site/" data-i18n="nav.site">Quero um site</a>
+      <a href="/sobre/" aria-current="page" data-i18n="nav.sobre">Sobre</a>
+      <a href="/contato/" data-i18n="nav.contato">Contato</a>
+    </nav>
+    <div class="barra-acoes">
+      <button type="button" class="barra-icone" data-abre="busca" aria-expanded="false" aria-controls="painel-busca" aria-label="Buscar no site" data-i18n-attr="aria-label:busca.abrir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <div class="idiomas" role="group" aria-label="Idioma" data-i18n-attr="aria-label:idioma.rotulo"><button type="button" data-idioma="pt" aria-pressed="true" lang="pt-BR">PT</button><button type="button" data-idioma="en" aria-pressed="false" lang="en">EN</button></div>
+      <button type="button" class="barra-icone barra-menu" data-abre="menu" aria-expanded="false" aria-controls="menu-celular" aria-label="Abrir o menu" data-i18n-attr="aria-label:menu.abrir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
+      <a class="botao botao-destaque botao-pequeno botao-falar" data-contato="whatsapp" href="https://wa.me/5521920000983?text=Oi%2C%20Enzo!%20Vi%20seu%20site%20e%20queria%20conversar." rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5 5.3 16A8 8 0 1 1 8 18.7z"/></svg><span data-i18n="nav.falar">Falar comigo</span></a>
+    </div>
+  </div>
+  <div class="mega" id="mega-trabalho" hidden>
+    <div class="mega-grade">
+      <div><h2 data-i18n="mega.projetos">Projeto</h2><a href="/distri-rio/">Distri Rio</a><p data-i18n="mega.distri">Site e catálogo de uma distribuidora, no ar.</p></div>
+      <div><h2 data-i18n="mega.estudo">Estudo</h2><a href="https://enzogaliazzo.github.io/ProjetoAlura/" rel="noopener" data-i18n="mega.series">Catálogo de Séries</a><p data-i18n="mega.series.texto">Projeto da Alura com dados em JSON.</p></div>
+      <div><h2 data-i18n="mega.proximo">Em breve</h2><a href="/#estudo" data-i18n="mega.proximo.link">Próximo projeto</a><p data-i18n="mega.proximo.texto">O próximo trabalho entra aqui.</p></div>
+    </div>
+  </div>
+  <nav class="gaveta-menu" id="menu-celular" aria-label="Menu" data-i18n-attr="aria-label:menu.rotulo" hidden>
+    <a href="/distri-rio/">Distri Rio</a>
+    <a href="/quero-um-site/" data-i18n="nav.site">Quero um site</a>
+    <a href="/sobre/" aria-current="page" data-i18n="nav.sobre">Sobre</a>
+    <a href="/contato/" data-i18n="nav.contato">Contato</a>
+    <a href="/perguntas/" data-i18n="nav.perguntas">Perguntas</a>
+  </nav>
+  <div class="busca-painel" id="painel-busca" role="search" hidden>
+    <div class="busca-caixa">
+      <label for="campo-busca" data-i18n="busca.rotulo">Buscar no site</label>
+      <input id="campo-busca" type="search" autocomplete="off" placeholder="Distri Rio, currículo, Vancouver…" data-i18n-attr="placeholder:busca.dica">
+      <ul class="busca-sugestoes" aria-live="polite"></ul>
+    </div>
+  </div>
+</header>
+<!-- /comum:barra -->
+
+<main id="conteudo">
+  <section class="cabeca-pagina escura sobre-topo" aria-labelledby="titulo-sobre">
+    <div class="pagina sobre-grade">
+      <div>
+        <p class="rotulo" data-i18n="nav.sobre">Sobre</p>
+        <h1 class="titulo-xl" id="titulo-sobre" data-i18n="sobre.titulo">Do Rio a Vancouver e de volta.</h1>
+        <p class="corpo-l fraco" data-i18n="sobre.bio">Sou Enzo Rezende, desenvolvedor web do Rio de Janeiro e estudante de Análise e Desenvolvimento de Sistemas na UVA, no campus da Barra da Tijuca. Passei seis meses em Vancouver fazendo curso de inglês e trabalhando. Hoje tenho inglês B2.</p>
+        <div class="botoes">
+          <a class="botao botao-destaque" href="/curriculo-enzo-rezende.pdf" data-i18n="rodape.pdf" data-i18n-attr="href:rodape.pdf.link">Currículo em PDF</a>
+          <a class="botao botao-contorno" href="https://www.linkedin.com/in/enzorezende07/" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <figure class="sobre-foto">
+        <picture><source type="image/avif" srcset="/assets/r/enzo-bodyboard-480.avif 480w, /assets/r/enzo-bodyboard-768.avif 768w" sizes="(min-width: 1068px) 420px, 88vw"><img src="/assets/r/enzo-bodyboard-480.webp" srcset="/assets/r/enzo-bodyboard-480.webp 480w, /assets/r/enzo-bodyboard-768.webp 768w" sizes="(min-width: 1068px) 420px, 88vw" width="768" height="960" fetchpriority="high" decoding="async" alt="Enzo de bodyboard, descendo uma onda" data-i18n-attr="alt:mar.alt"></picture>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Linha do tempo horizontal -->
+  <section class="secao escura" aria-labelledby="titulo-caminho">
+    <div class="pagina">
+      <div class="cabeca-secao"><h2 class="titulo-m" id="titulo-caminho" data-revelar="desfoque" data-i18n="sobre.caminho">O caminho até aqui.</h2></div>
+      <ol class="linha-tempo" tabindex="0" aria-label="Linha do tempo" data-i18n-attr="aria-label:sobre.linha">
+        <li class="marco"><p class="marco-data" data-i18n="sobre.m1.d">Em andamento</p><h3 class="titulo-s">UVA</h3><p class="fraco" data-i18n="sobre.m1.t">Análise e Desenvolvimento de Sistemas, campus Barra da Tijuca.</p></li>
+        <li class="marco"><p class="marco-data">2025</p><h3 class="titulo-s">Alura</h3><p class="fraco" data-i18n="sobre.m2.t">Catálogo de Séries: dados em JSON, busca por nome, filtro por gênero e detalhes numa janela.</p></li>
+        <li class="marco"><p class="marco-data">2026</p><h3 class="titulo-s">Distri Rio</h3><p class="fraco" data-i18n="sobre.m4.t">Site e catálogo de uma distribuidora, com 333 páginas de produto e pedido pelo WhatsApp.</p></li>
+        <li class="marco"><p class="marco-data" data-i18n="sobre.m3.d">Fevereiro a julho de 2026</p><h3 class="titulo-s">Vancouver</h3><p class="fraco" data-i18n="sobre.m3.t">Curso de inglês e trabalho.</p></li>
+        <li class="marco"><p class="marco-data" data-i18n="sobre.m5.d">Agora</p><h3 class="titulo-s">Rio de Janeiro</h3><p class="fraco" data-i18n="sobre.m5.t">De volta ao Rio, com inglês B2. Aberto a estágio e a projetos de site.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Interesses e fotos: fora da tela -->
+  <section class="secao nevoa" data-galeria aria-labelledby="titulo-fora">
+    <div class="pagina">
+      <div class="galeria-topo">
+        <div>
+          <p class="rotulo" data-i18n="espec.mar">Fora da tela</p>
+          <h2 class="titulo-m" id="titulo-fora" data-revelar="desfoque" data-i18n="sobre.fora">Lugares que levo comigo.</h2>
+        </div>
+      </div>
+      <ul class="galeria-trilho" aria-label="Fotos" data-i18n-attr="aria-label:galeria.rotulo">
+        <li class="galeria-item"><figure><picture><source type="image/avif" srcset="/assets/r/secreto-1-480.avif 480w, /assets/r/secreto-1-900.avif 900w" sizes="(min-width: 1068px) 380px, 82vw"><img src="/assets/r/secreto-1-480.webp" srcset="/assets/r/secreto-1-480.webp 480w, /assets/r/secreto-1-900.webp 900w" sizes="(min-width: 1068px) 380px, 82vw" width="900" height="900" loading="lazy" decoding="async" alt="Enzo de bodyboard, de roupa de borracha azul, saindo da espuma de uma onda" data-i18n-attr="alt:galeria.a1"></picture><figcaption><span data-i18n="galeria.l1">Secreto</span> · <a href="https://www.instagram.com/lindofotos/" rel="noopener">@lindofotos</a></figcaption></figure></li>
+        <li class="galeria-item"><figure><picture><source type="image/avif" srcset="/assets/r/neve-480.avif 480w, /assets/r/neve-750.avif 750w" sizes="(min-width: 1068px) 380px, 82vw"><img src="/assets/r/neve-480.webp" srcset="/assets/r/neve-480.webp 480w, /assets/r/neve-750.webp 750w" sizes="(min-width: 1068px) 380px, 82vw" width="750" height="1000" loading="lazy" decoding="async" alt="Enzo de costas num banco de madeira, olhando a neve entre os pinheiros, no Canadá" data-i18n-attr="alt:espec.neve"></picture><figcaption data-i18n="galeria.l4">Canadá, 2026</figcaption></figure></li>
+        <li class="galeria-item"><figure><picture><source type="image/avif" srcset="/assets/r/barco-480.avif 480w, /assets/r/barco-750.avif 750w" sizes="(min-width: 1068px) 380px, 82vw"><img src="/assets/r/barco-480.webp" srcset="/assets/r/barco-480.webp 480w, /assets/r/barco-750.webp 750w" sizes="(min-width: 1068px) 380px, 82vw" width="750" height="1000" loading="lazy" decoding="async" alt="Enzo na proa de um barco, olhando montanhas com neve do outro lado da água" data-i18n-attr="alt:galeria.a2"></picture><figcaption data-i18n="galeria.l2">A bordo</figcaption></figure></li>
+        <li class="galeria-item"><figure><picture><source type="image/avif" srcset="/assets/r/secreto-2-480.avif 480w, /assets/r/secreto-2-900.avif 900w" sizes="(min-width: 1068px) 380px, 82vw"><img src="/assets/r/secreto-2-480.webp" srcset="/assets/r/secreto-2-480.webp 480w, /assets/r/secreto-2-900.webp 900w" sizes="(min-width: 1068px) 380px, 82vw" width="900" height="900" loading="lazy" decoding="async" alt="Enzo com a prancha vermelha furando a espuma de uma onda" data-i18n-attr="alt:galeria.a5"></picture><figcaption><span data-i18n="galeria.l1">Secreto</span> · <a href="https://www.instagram.com/lindofotos/" rel="noopener">@lindofotos</a></figcaption></figure></li>
+        <li class="galeria-item"><figure><picture><source type="image/avif" srcset="/assets/r/pedras-480.avif 480w, /assets/r/pedras-750.avif 750w" sizes="(min-width: 1068px) 380px, 82vw"><img src="/assets/r/pedras-480.webp" srcset="/assets/r/pedras-480.webp 480w, /assets/r/pedras-750.webp 750w" sizes="(min-width: 1068px) 380px, 82vw" width="750" height="1000" loading="lazy" decoding="async" alt="Enzo em pé nas pedras, de costas, olhando o mar e as montanhas com neve" data-i18n-attr="alt:galeria.a4"></picture><figcaption data-i18n="galeria.l4">Canadá, 2026</figcaption></figure></li>
+        <li class="galeria-item"><figure><picture><source type="image/avif" srcset="/assets/r/lago-480.avif 480w, /assets/r/lago-900.avif 900w" sizes="(min-width: 1068px) 380px, 82vw"><img src="/assets/r/lago-480.webp" srcset="/assets/r/lago-480.webp 480w, /assets/r/lago-900.webp 900w" sizes="(min-width: 1068px) 380px, 82vw" width="900" height="900" loading="lazy" decoding="async" alt="Enzo sentado de costas na beira de um lago de água clara, com montanhas ao fundo" data-i18n-attr="alt:galeria.a6"></picture><figcaption data-i18n="galeria.l6">Março de 2025</figcaption></figure></li>
+        <li class="galeria-item"><figure><picture><source type="image/avif" srcset="/assets/r/setup-mesa-480.avif 480w, /assets/r/setup-mesa-750.avif 750w" sizes="(min-width: 1068px) 380px, 82vw"><img src="/assets/r/setup-mesa-480.webp" srcset="/assets/r/setup-mesa-480.webp 480w, /assets/r/setup-mesa-750.webp 750w" sizes="(min-width: 1068px) 380px, 82vw" width="750" height="1000" loading="lazy" decoding="async" alt="Mesa de trabalho com um monitor num braço articulado e um notebook de teclado iluminado" data-i18n-attr="alt:galeria.a3"></picture><figcaption data-i18n="galeria.l3">Onde os sites são feitos</figcaption></figure></li>
+      </ul>
+      <div class="galeria-controles">
+        <div class="galeria-pontos"></div>
+        <div class="galeria-setas">
+          <button type="button" class="botao-redondo" data-anterior aria-label="Foto anterior" data-i18n-attr="aria-label:galeria.anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+          <button type="button" class="botao-redondo" data-proxima aria-label="Próxima foto" data-i18n-attr="aria-label:galeria.proxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interesses e idiomas -->
+  <section class="secao clara" aria-labelledby="titulo-interesses">
+    <div class="pagina">
+      <div class="cabeca-secao"><h2 class="titulo-m" id="titulo-interesses" data-revelar="desfoque" data-i18n="sobre.interesses">Além do código.</h2></div>
+      <div class="bento">
+        <div class="bloco bloco-largo bloco-escuro" data-revelar><p class="bloco-rotulo" data-i18n="sobre.i1.r">No mar</p><p class="titulo-s" data-i18n="espec.mar.t">Bodyboard no Secreto.</p></div>
+        <div class="bloco bloco-largo" data-revelar data-revelar-atraso="1"><p class="bloco-rotulo" data-i18n="espec.paises">Países visitados</p><p class="titulo-s" data-i18n="espec.paises.t">Argentina, Canadá, França, Itália, México e Portugal.</p></div>
+        <div class="bloco" data-revelar><p class="bloco-rotulo" data-i18n="sobre.i3.r">Idiomas</p><p class="titulo-s" data-i18n="sobre.i3.t">Português nativo e inglês B2.</p></div>
+        <div class="bloco bloco-largo" data-revelar data-revelar-atraso="1"><p class="bloco-rotulo" data-i18n="espec.estudo">Estudo</p><p class="titulo-s" data-i18n="sobre.i4.t">ADS na UVA e o Catálogo de Séries, na Alura.</p></div>
+        <div class="bloco" data-revelar data-revelar-atraso="2"><p class="bloco-rotulo" data-i18n="sobre.i5.r">Também</p><p class="titulo-s"><span class="preencher" data-i18n="sobre.i5.t">[preencher: outro interesse, se quiser]</span></p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="pagina">
+    <p class="rodape-trilha"><a href="/" data-i18n="trilha.inicio">Início</a><span aria-current="page" data-i18n="nav.sobre">Sobre</span></p>
+<!-- comum:rodape -->
+    <nav class="rodape-colunas" aria-label="Mapa do site" data-i18n-attr="aria-label:rodape.mapa">
+      <details open><summary data-i18n="nav.trabalho">Trabalho</summary><ul><li><a href="/distri-rio/">Distri Rio</a></li><li><a href="https://enzogaliazzo.github.io/ProjetoAlura/" rel="noopener" data-i18n="mega.series">Catálogo de Séries</a></li></ul></details>
+      <details open><summary data-i18n="planos.rotulo">Para o seu negócio</summary><ul><li><a href="/quero-um-site/" data-i18n="nav.site">Quero um site</a></li><li><a href="/perguntas/" data-i18n="nav.perguntas">Perguntas</a></li></ul></details>
+      <details open><summary data-i18n="nav.sobre">Sobre</summary><ul><li><a href="/sobre/" data-i18n="rodape.vida">UVA, Vancouver e o mar</a></li><li><a href="/curriculo.html" data-i18n="rodape.curriculo">Currículo</a></li></ul></details>
+      <details open><summary data-i18n="nav.contato">Contato</summary><ul><li><a href="/contato/" data-i18n="rodape.falar">Falar comigo</a></li><li><a href="https://www.linkedin.com/in/enzorezende07/" rel="noopener">LinkedIn</a></li><li><a href="https://github.com/EnzoGaliazzo" rel="noopener">GitHub</a></li><li><a href="https://www.instagram.com/galiaco0/" rel="noopener">Instagram</a></li></ul></details>
+    </nav>
+    <div class="rodape-contato">
+      <a class="botao botao-escuro botao-pequeno" data-contato="linkedin" href="https://www.linkedin.com/in/enzorezende07/" rel="noopener">LinkedIn</a>
+      <a class="botao botao-escuro botao-pequeno" data-contato="email" data-email href="/contato/"><span data-email-texto>enzogaliaco29 (arroba) gmail.com</span></a>
+      <a class="botao botao-escuro botao-pequeno" data-contato="curriculo" href="/curriculo-enzo-rezende.pdf" data-i18n="rodape.pdf" data-i18n-attr="href:rodape.pdf.link">Currículo em PDF</a>
+      <a class="botao botao-whats botao-pequeno" data-contato="orcamento" href="https://wa.me/5521920000983?text=Oi%2C%20Enzo!%20Quero%20um%20site%20para%20o%20meu%20neg%C3%B3cio." rel="noopener" data-i18n="rodape.orcamento">Pedir orçamento no WhatsApp</a>
+    </div>
+    <p class="rodape-legal" data-i18n="rodape.legal">Enzo Rezende · Rio de Janeiro. Feito em HTML, CSS e JavaScript, sem framework. O 21 do letreiro é o DDD daqui.</p>
+<!-- /comum:rodape -->
+  </div>
+</footer>
+</body>
+</html>

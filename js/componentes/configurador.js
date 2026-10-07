@@ -36,7 +36,7 @@ export default function ligar(formularios) {
         plano: plano ? rotulo(plano) : '',
         paginas: paginas ? rotulo(paginas) : '',
         extras: extras.map(rotulo),
-        nome: dado('nome'), empresa: dado('empresa'), whatsapp: dado('whatsapp'), vende: dado('vende'), mensagem: dado('mensagem'),
+        nome: dado('nome'), empresa: dado('empresa'), whatsapp: dado('whatsapp'), email: dado('email'), vende: dado('vende'), mensagem: dado('mensagem'),
         bruto: Object.fromEntries([...form.querySelectorAll('input, textarea')].reduce((mapa, el) => {
           if (el.type === 'radio') { if (el.checked) mapa.set(el.name, el.value); }
           else if (el.type === 'checkbox') { if (!mapa.has(el.name)) mapa.set(el.name, []); if (el.checked) mapa.get(el.name).push(el.value); }
@@ -58,6 +58,7 @@ export default function ligar(formularios) {
       if (p.nome) linhas.push(`${ingles ? 'Name' : 'Nome'}: ${p.nome}`);
       if (p.empresa) linhas.push(`${ingles ? 'Company' : 'Empresa'}: ${p.empresa}`);
       if (p.whatsapp) linhas.push(`WhatsApp: ${p.whatsapp}`);
+      if (p.email) linhas.push(`E-mail: ${p.email}`);
       if (p.vende) linhas.push(`${ingles ? 'What I sell' : 'O que vendo'}: ${p.vende}`);
       if (p.mensagem) linhas.push('', p.mensagem);
       return linhas.join('\n');

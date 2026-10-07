@@ -16,6 +16,7 @@ const QUADROS = {
 const FIXOS = {
   rio: { largo: [[['RIO', 2]]], estreito: [[['RIO', 2]]] },
   chama: { largo: [[['ME CHAMA', 2]]], estreito: [[['ME', 2], ['CHAMA', 2]]] },
+  erro: { largo: [[['FORA DE ROTA', 2]]], estreito: [[['FORA DE', 2], ['ROTA', 2]]] },
 };
 
 const CORES = {

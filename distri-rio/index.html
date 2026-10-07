@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Distri Rio · do arquivo ao ar · Enzo Rezende</title>
+<meta name="description" content="Como o Enzo Rezende fez o site da Distri Rio: 333 páginas de produto geradas de um arquivo, busca, filtros, pedido pelo WhatsApp e quatro conferências automáticas a cada push.">
+<link rel="canonical" href="https://enzogaliazzo.github.io/distri-rio/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://enzogaliazzo.github.io/distri-rio/">
+<meta property="og:site_name" content="Enzo Rezende">
+<meta property="og:title" content="Distri Rio · do arquivo ao ar">
+<meta property="og:description" content="333 páginas de produto geradas de um arquivo e o pedido saindo pronto no WhatsApp.">
+<meta property="og:image" content="https://enzogaliazzo.github.io/assets/distririo-inicio.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fontes/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Distri Rio",
+  "url": "https://enzogaliazzo.github.io/distri-rio/",
+  "sameAs": "https://distririo.com.br/",
+  "about": "Site e catálogo de uma distribuidora no Rio de Janeiro, com pedido pelo WhatsApp.",
+  "inLanguage": "pt-BR",
+  "dateCreated": "2026",
+  "creator": { "@type": "Person", "name": "Enzo Rezende", "url": "https://enzogaliazzo.github.io/" },
+  "keywords": ["HTML", "CSS", "JavaScript", "Node.js", "GitHub Actions", "GitHub Pages", "SEO", "LGPD"],
+  "image": "https://enzogaliazzo.github.io/assets/distririo-inicio.webp"
+}
+</script>
+<script type="module" src="/js/nucleo/inicio.js"></script>
+</head>
+<body data-pagina="distri">
+<a class="pular" href="#conteudo" data-i18n="pular">Pular para o conteúdo</a>
+
+<!-- comum:barra -->
+<header class="barra">
+  <div class="barra-linha">
+    <a class="marca" href="/" aria-label="Enzo Rezende, página inicial" data-i18n-attr="aria-label:marca.rotulo"><span class="marca-linha">21</span> Enzo Rezende</a>
+    <nav class="barra-links" aria-label="Principal" data-i18n-attr="aria-label:nav.rotulo">
+      <button type="button" data-abre="mega" aria-expanded="false" aria-controls="mega-trabalho" data-i18n="nav.trabalho">Trabalho</button>
+      <a href="/quero-um-site/" data-i18n="nav.site">Quero um site</a>
+      <a href="/sobre/" data-i18n="nav.sobre">Sobre</a>
+      <a href="/contato/" data-i18n="nav.contato">Contato</a>
+    </nav>
+    <div class="barra-acoes">
+      <button type="button" class="barra-icone" data-abre="busca" aria-expanded="false" aria-controls="painel-busca" aria-label="Buscar no site" data-i18n-attr="aria-label:busca.abrir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <div class="idiomas" role="group" aria-label="Idioma" data-i18n-attr="aria-label:idioma.rotulo"><button type="button" data-idioma="pt" aria-pressed="true" lang="pt-BR">PT</button><button type="button" data-idioma="en" aria-pressed="false" lang="en">EN</button></div>
+      <button type="button" class="barra-icone barra-menu" data-abre="menu" aria-expanded="false" aria-controls="menu-celular" aria-label="Abrir o menu" data-i18n-attr="aria-label:menu.abrir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
+      <a class="botao botao-destaque botao-pequeno botao-falar" data-contato="whatsapp" href="https://wa.me/5521920000983?text=Oi%2C%20Enzo!%20Vi%20seu%20site%20e%20queria%20conversar." rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5 5.3 16A8 8 0 1 1 8 18.7z"/></svg><span data-i18n="nav.falar">Falar comigo</span></a>
+    </div>
+  </div>
+  <div class="mega" id="mega-trabalho" hidden>
+    <div class="mega-grade">
+      <div><h2 data-i18n="mega.projetos">Projeto</h2><a href="/distri-rio/" aria-current="page">Distri Rio</a><p data-i18n="mega.distri">Site e catálogo de uma distribuidora, no ar.</p></div>
+      <div><h2 data-i18n="mega.estudo">Estudo</h2><a href="https://enzogaliazzo.github.io/ProjetoAlura/" rel="noopener" data-i18n="mega.series">Catálogo de Séries</a><p data-i18n="mega.series.texto">Projeto da Alura com dados em JSON.</p></div>
+      <div><h2 data-i18n="mega.proximo">Em breve</h2><a href="/#estudo" data-i18n="mega.proximo.link">Próximo projeto</a><p data-i18n="mega.proximo.texto">O próximo trabalho entra aqui.</p></div>
+    </div>
+  </div>
+  <nav class="gaveta-menu" id="menu-celular" aria-label="Menu" data-i18n-attr="aria-label:menu.rotulo" hidden>
+    <a href="/distri-rio/" aria-current="page">Distri Rio</a>
+    <a href="/quero-um-site/" data-i18n="nav.site">Quero um site</a>
+    <a href="/sobre/" data-i18n="nav.sobre">Sobre</a>
+    <a href="/contato/" data-i18n="nav.contato">Contato</a>
+    <a href="/perguntas/" data-i18n="nav.perguntas">Perguntas</a>
+  </nav>
+  <div class="busca-painel" id="painel-busca" role="search" hidden>
+    <div class="busca-caixa">
+      <label for="campo-busca" data-i18n="busca.rotulo">Buscar no site</label>
+      <input id="campo-busca" type="search" autocomplete="off" placeholder="Distri Rio, currículo, Vancouver…" data-i18n-attr="placeholder:busca.dica">
+      <ul class="busca-sugestoes" aria-live="polite"></ul>
+    </div>
+  </div>
+</header>
+<!-- /comum:barra -->
+
+<main id="conteudo">
+  <nav class="local" aria-label="Nesta página" data-i18n-attr="aria-label:local.rotulo">
+    <div class="local-linha">
+      <p class="local-nome">Distri Rio</p>
+      <div class="local-abas">
+        <a href="#visao" data-i18n="local.visao">Visão geral</a>
+        <a href="#por-dentro" data-i18n="local.dentro">Por dentro</a>
+        <a href="#especificacoes" data-i18n="local.espec">Especificações</a>
+      </div>
+      <a class="botao botao-escuro botao-pequeno" href="https://distririo.com.br/" rel="noopener" data-i18n="distri.aovivo">Ver ao vivo</a>
+    </div>
+  </nav>
+
+  <!-- Topo: nome, subtítulo e o computador que levanta com a rolagem -->
+  <section class="cabeca-pagina escura centro" aria-labelledby="titulo-distri">
+    <div class="pagina">
+      <p class="rotulo" data-i18n="distri.rotulo">Projeto · 2026</p>
+      <h1 class="titulo-xl" id="titulo-distri">Distri Rio.</h1>
+      <p class="subtitulo gradiente" data-i18n="distri.sub">Do arquivo ao ar.</p>
+      <p class="corpo-l fraco" data-i18n="distri.intro">Site e catálogo de uma distribuidora de doces, bebidas, energéticos e suplementos que atende comércios do Rio e da Baixada Fluminense.</p>
+      <div class="botoes botoes-centro">
+        <a class="botao botao-destaque" href="https://distririo.com.br/" rel="noopener" data-i18n="distri.aovivo">Ver ao vivo</a>
+        <a class="botao botao-contorno" href="https://github.com/EnzoGaliazzo/distririo" rel="noopener" data-i18n="distri.codigo">Ver o código</a>
+      </div>
+      <div class="mockup mockup-topo" data-mockup>
+        <div class="mockup-corpo">
+          <div class="mockup-tela">
+            <!-- Quando gravado, entra aqui o vídeo da busca digitando "trident" (midia/videos/busca.mp4 + .webm, com poster). -->
+            <picture><source type="image/avif" srcset="/assets/r/distririo-inicio-480.avif 480w, /assets/r/distririo-inicio-960.avif 960w, /assets/r/distririo-inicio-1600.avif 1600w" sizes="(min-width: 1068px) 920px, 92vw"><img src="/assets/r/distririo-inicio-960.webp" srcset="/assets/r/distririo-inicio-480.webp 480w, /assets/r/distririo-inicio-960.webp 960w, /assets/r/distririo-inicio-1600.webp 1600w" sizes="(min-width: 1068px) 920px, 92vw" width="1600" height="1000" fetchpriority="high" decoding="async" alt="Página inicial da Distri Rio no computador" data-i18n-attr="alt:distri.a.inicio"></picture>
+          </div>
+          <div class="mockup-base"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visão geral: o que é e para quem -->
+  <section class="secao clara" id="visao" aria-labelledby="titulo-visao">
+    <div class="pagina">
+      <div class="cabeca-secao">
+        <p class="rotulo" data-i18n="local.visao">Visão geral</p>
+        <h2 class="titulo-m" id="titulo-visao" data-revelar="desfoque" data-i18n="distri.visao.titulo">Feito para quem compra no atacado.</h2>
+      </div>
+      <div class="bento">
+        <div class="bloco bloco-largo" data-revelar><p class="bloco-rotulo" data-i18n="distri.v1.r">Para o comerciante</p><p class="titulo-s" data-i18n="distri.v1.t">Acha o produto, monta a lista e manda pelo WhatsApp.</p><p class="fraco" data-i18n="distri.v1.d">Busca por nome com Ctrl+K, filtros por seção e por marca, e a lista guardada no navegador.</p></div>
+        <div class="bloco bloco-largo bloco-escuro" data-revelar data-revelar-atraso="1"><p class="bloco-rotulo" data-i18n="distri.v2.r">Para a distribuidora</p><p class="titulo-s" data-i18n="distri.v2.t">Recebe o pedido escrito, com CNPJ, nome e WhatsApp.</p><p data-i18n="distri.v2.d">E o catálogo mora num arquivo só: produto novo no arquivo vira página no próximo push.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por dentro: as cinco paradas, com o computador e o celular trocando de tela -->
+  <section class="secao nevoa" id="por-dentro" aria-labelledby="titulo-dentro">
+    <div class="pagina">
+      <div class="cabeca-secao">
+        <p class="rotulo" data-i18n="local.dentro">Por dentro</p>
+        <h2 class="titulo-m" id="titulo-dentro" data-revelar="desfoque" data-i18n="distri.dentro.titulo">Cinco paradas, do arquivo ao pedido.</h2>
+      </div>
+      <div class="paradas" data-paradas>
+        <div class="paradas-aparelhos" aria-hidden="true">
+          <div class="mockup-tela">
+            <div class="aparelho-tela">
+              <picture class="ativa" data-tela="1 2 5"><source type="image/avif" srcset="/assets/r/distririo-catalogo-480.avif 480w, /assets/r/distririo-catalogo-960.avif 960w" sizes="(min-width: 1068px) 560px, 92vw"><img src="/assets/r/distririo-catalogo-960.webp" srcset="/assets/r/distririo-catalogo-480.webp 480w, /assets/r/distririo-catalogo-960.webp 960w" sizes="(min-width: 1068px) 560px, 92vw" width="960" height="600" loading="lazy" decoding="async" alt=""></picture>
+              <picture data-tela="3 4"><source type="image/avif" srcset="/assets/r/distririo-inicio-480.avif 480w, /assets/r/distririo-inicio-960.avif 960w" sizes="(min-width: 1068px) 560px, 92vw"><img src="/assets/r/distririo-inicio-960.webp" srcset="/assets/r/distririo-inicio-480.webp 480w, /assets/r/distririo-inicio-960.webp 960w" sizes="(min-width: 1068px) 560px, 92vw" width="960" height="600" loading="lazy" decoding="async" alt=""></picture>
+            </div>
+          </div>
+          <div class="mockup-base"></div>
+          <div class="aparelho-celular">
+            <div class="aparelho-tela">
+              <picture class="ativa" data-tela="1 2 5"><source type="image/avif" srcset="/assets/r/distririo-produto-480.avif" ><img src="/assets/r/distririo-produto-480.webp" width="480" height="1039" loading="lazy" decoding="async" alt=""></picture>
+              <picture data-tela="3 4"><source type="image/avif" srcset="/assets/r/distririo-celular-480.avif"><img src="/assets/r/distririo-celular-480.webp" width="480" height="1039" loading="lazy" decoding="async" alt=""></picture>
+            </div>
+          </div>
+        </div>
+        <ol class="paradas-lista">
+          <li class="parada" data-parada="1">
+            <p class="parada-num">01 · <span data-i18n="distri.p1.r">O arquivo</span></p>
+            <h3 class="titulo-s" data-i18n="distri.p1.t">O catálogo inteiro mora num JSON.</h3>
+            <p class="fraco" data-i18n="distri.p1.d">Cada produto é um registro com nome, marca, seção e linha. O Trident 5S, por exemplo, é Mondelez, nas linhas Menta, Hortelã e Tutti-Frutti.</p>
+          </li>
+          <li class="parada" data-parada="2">
+            <p class="parada-num">02 · <span data-i18n="distri.p2.r">O build</span></p>
+            <h3 class="titulo-s" data-i18n="distri.p2.t">Um script em Node escreve as páginas.</h3>
+            <p class="fraco" data-i18n="distri.p2.d">Do mesmo arquivo saem 333 páginas de produto e 19 páginas de marca, com sitemap e dados estruturados para o Google.</p>
+          </li>
+          <li class="parada" data-parada="3">
+            <p class="parada-num">03 · <span data-i18n="distri.p3.r">A busca</span></p>
+            <h3 class="titulo-s" data-i18n="distri.p3.t">Ctrl+K e o produto aparece.</h3>
+            <p class="fraco" data-i18n="distri.p3.d">Busca por nome no catálogo inteiro e filtros por seção e por marca, no computador e no celular.</p>
+          </li>
+          <li class="parada" data-parada="4">
+            <p class="parada-num">04 · <span data-i18n="distri.p4.r">A conferência</span></p>
+            <h3 class="titulo-s" data-i18n="distri.p4.t">Conferido antes de ir ao ar.</h3>
+            <p class="fraco" data-i18n="distri.p4.d">A cada push, o GitHub Actions abre o site num Chrome sem interface e confere o build, os links, as imagens e os fluxos principais. Passou, o GitHub Pages publica.<a class="nota" href="#nota-1" id="ref-1" aria-label="Nota 1">¹</a></p>
+          </li>
+          <li class="parada" data-parada="5">
+            <p class="parada-num">05 · <span data-i18n="distri.p5.r">O pedido</span></p>
+            <h3 class="titulo-s" data-i18n="distri.p5.t">A lista vira conversa.</h3>
+            <p class="fraco" data-i18n="distri.p5.d">Antes de abrir o WhatsApp, um formulário pede CNPJ, nome e WhatsApp, e uma cópia vai por e-mail. A mensagem chega à distribuidora já escrita.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Especificações -->
+  <section class="secao clara" id="especificacoes" aria-labelledby="titulo-ficha">
+    <div class="pagina">
+      <div class="cabeca-secao">
+        <p class="rotulo" data-i18n="local.espec">Especificações</p>
+        <h2 class="titulo-m" id="titulo-ficha" data-revelar="desfoque" data-i18n="distri.ficha.titulo">Ficha técnica.</h2>
+      </div>
+      <dl class="ficha-tecnica" data-revelar>
+        <div><dt data-i18n="distri.f1">Páginas de produto</dt><dd>333</dd></div>
+        <div><dt data-i18n="distri.f2">Páginas de marca</dt><dd>19</dd></div>
+        <div><dt data-i18n="distri.f3">Páginas principais</dt><dd>9</dd></div>
+        <div><dt data-i18n="distri.f4">Conferências a cada push</dt><dd data-i18n="distri.f4.v">4, num Chrome sem interface</dd></div>
+        <div><dt data-i18n="distri.f5">Do push ao ar</dt><dd data-i18n="distri.f5.v">20 a 60 segundos¹</dd></div>
+        <div><dt data-i18n="distri.f6">Cookies de medição</dt><dd data-i18n="distri.f6.v">Só depois do aceite (LGPD)</dd></div>
+        <div><dt data-i18n="distri.f7">Busca</dt><dd data-i18n="distri.f7.v">Por nome, com Ctrl+K</dd></div>
+        <div><dt data-i18n="distri.f8">Pedido</dt><dd data-i18n="distri.f8.v">WhatsApp, com CNPJ e cópia por e-mail</dd></div>
+        <div><dt data-i18n="distri.f9">Também tem</dt><dd data-i18n="distri.f9.v">Formulário de currículos por e-mail</dd></div>
+      </dl>
+      <p class="fraco ficha-stack" data-i18n="distri.stack">Feito com HTML, CSS, JavaScript, Node.js, Python, GitHub Actions e GitHub Pages.</p>
+    </div>
+  </section>
+
+  <!-- O pedido no celular. Quando gravado, o vídeo da lista indo até o botão do WhatsApp (sem enviar) entra no lugar da tela. -->
+  <section class="secao escura" aria-labelledby="titulo-celular">
+    <div class="pagina celular-destaque">
+      <div class="celular-destaque-texto">
+        <p class="rotulo" data-i18n="distri.p5.r">O pedido</p>
+        <h2 class="titulo-m" id="titulo-celular" data-revelar="desfoque" data-i18n="distri.cel.titulo">Pensado primeiro para o celular.</h2>
+        <p class="corpo-l fraco" data-revelar data-i18n="distri.cel.texto">No celular, cada produto tem a sua página, com a foto, a marca, a linha e o botão de adicionar à lista.</p>
+      </div>
+      <div class="aparelho-solo" data-revelar>
+        <picture><source type="image/avif" srcset="/assets/r/distririo-produto-480.avif 480w, /assets/r/distririo-produto-780.avif 780w" sizes="(min-width: 734px) 320px, 70vw"><img src="/assets/r/distririo-produto-480.webp" srcset="/assets/r/distririo-produto-480.webp 480w, /assets/r/distririo-produto-780.webp 780w" sizes="(min-width: 734px) 320px, 70vw" width="780" height="1688" loading="lazy" decoding="async" alt="Página de produto da Distri Rio no celular" data-i18n-attr="alt:distri.a.produto"></picture>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chamada final -->
+  <section class="secao nevoa centro" aria-labelledby="titulo-final">
+    <div class="pagina">
+      <h2 class="titulo-m" id="titulo-final" data-revelar="desfoque" data-i18n="distri.final.titulo">Quer um assim para o seu negócio?</h2>
+      <p class="corpo-l fraco" data-revelar data-i18n="distri.final.texto">Escolha o tipo de site, monte o pedido e mande pelo WhatsApp ou por e-mail.</p>
+      <p class="botoes botoes-centro" data-revelar><a class="botao botao-destaque" href="/quero-um-site/" data-i18n="planos.botao">Montar o meu pedido</a><a class="botao botao-contorno" href="/contato/#recrutador" data-i18n="caminho.recrutador">Estou contratando</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="pagina">
+    <div class="rodape-notas">
+      <p id="nota-1">¹ <span data-i18n="nota1">Na Distri Rio, o site novo fica no ar de 20 a 60 segundos depois do push, conforme a documentação do projeto.</span> <a href="#ref-1" aria-label="Voltar ao texto" data-i18n-attr="aria-label:nota.voltar">↩</a></p>
+    </div>
+    <p class="rodape-trilha"><a href="/" data-i18n="trilha.inicio">Início</a><span aria-current="page">Distri Rio</span></p>
+<!-- comum:rodape -->
+    <nav class="rodape-colunas" aria-label="Mapa do site" data-i18n-attr="aria-label:rodape.mapa">
+      <details open><summary data-i18n="nav.trabalho">Trabalho</summary><ul><li><a href="/distri-rio/">Distri Rio</a></li><li><a href="https://enzogaliazzo.github.io/ProjetoAlura/" rel="noopener" data-i18n="mega.series">Catálogo de Séries</a></li></ul></details>
+      <details open><summary data-i18n="planos.rotulo">Para o seu negócio</summary><ul><li><a href="/quero-um-site/" data-i18n="nav.site">Quero um site</a></li><li><a href="/perguntas/" data-i18n="nav.perguntas">Perguntas</a></li></ul></details>
+      <details open><summary data-i18n="nav.sobre">Sobre</summary><ul><li><a href="/sobre/" data-i18n="rodape.vida">UVA, Vancouver e o mar</a></li><li><a href="/curriculo.html" data-i18n="rodape.curriculo">Currículo</a></li></ul></details>
+      <details open><summary data-i18n="nav.contato">Contato</summary><ul><li><a href="/contato/" data-i18n="rodape.falar">Falar comigo</a></li><li><a href="https://www.linkedin.com/in/enzorezende07/" rel="noopener">LinkedIn</a></li><li><a href="https://github.com/EnzoGaliazzo" rel="noopener">GitHub</a></li><li><a href="https://www.instagram.com/galiaco0/" rel="noopener">Instagram</a></li></ul></details>
+    </nav>
+    <div class="rodape-contato">
+      <a class="botao botao-escuro botao-pequeno" data-contato="linkedin" href="https://www.linkedin.com/in/enzorezende07/" rel="noopener">LinkedIn</a>
+      <a class="botao botao-escuro botao-pequeno" data-contato="email" data-email href="/contato/"><span data-email-texto>enzogaliaco29 (arroba) gmail.com</span></a>
+      <a class="botao botao-escuro botao-pequeno" data-contato="curriculo" href="/curriculo-enzo-rezende.pdf" data-i18n="rodape.pdf" data-i18n-attr="href:rodape.pdf.link">Currículo em PDF</a>
+      <a class="botao botao-whats botao-pequeno" data-contato="orcamento" href="https://wa.me/5521920000983?text=Oi%2C%20Enzo!%20Quero%20um%20site%20para%20o%20meu%20neg%C3%B3cio." rel="noopener" data-i18n="rodape.orcamento">Pedir orçamento no WhatsApp</a>
+    </div>
+    <p class="rodape-legal" data-i18n="rodape.legal">Enzo Rezende · Rio de Janeiro. Feito em HTML, CSS e JavaScript, sem framework. O 21 do letreiro é o DDD daqui.</p>
+<!-- /comum:rodape -->
+  </div>
+</footer>
+</body>
+</html>
