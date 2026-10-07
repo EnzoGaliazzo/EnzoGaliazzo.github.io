@@ -8,7 +8,6 @@ const COLUNAS = 21;
 export default function ligar(cenas, { reduzir }) {
   cenas.forEach((cena) => {
     const canvas = cena.querySelector('canvas');
-    const contagem = cena.querySelector('[data-quadros-contagem]');
     const ctx = canvas.getContext('2d');
     const linhas = Math.ceil(TOTAL / COLUNAS);
     let ultimo = -1;
@@ -36,7 +35,6 @@ export default function ligar(cenas, { reduzir }) {
         ctx.shadowBlur = aceso ? passo * 0.6 : 0;
         ctx.fill();
       }
-      if (contagem) contagem.textContent = acesos;
     };
 
     if (reduzir) { requestAnimationFrame(() => desenhar(TOTAL)); return; }

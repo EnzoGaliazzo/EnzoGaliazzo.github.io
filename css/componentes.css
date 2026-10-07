@@ -70,7 +70,13 @@
 .local-abas { display: flex; gap: 20px; margin-left: auto; overflow-x: auto; scrollbar-width: none; }
 .local-abas a { color: var(--cinza-claro); text-decoration: none; font-size: var(--micro); white-space: nowrap; padding: 8px 0; }
 .local-abas a:hover, .local-abas a[aria-current="true"] { color: var(--grafite); }
-@media (max-width: 733px) { .local-nome { font-size: 17px; } .local-abas { display: none; } .local .botao { margin-left: auto; } }
+@media (max-width: 733px) {
+  .local-nome { font-size: 17px; } .local-abas { display: none; } .local .botao { margin-left: auto; }
+  /* No celular só uma barra fica presa: nas páginas com a barra da seção, a global rola junto com a página */
+  body:has(.local) .barra { position: relative; }
+  body:has(.local) .local { top: 0; }
+  html:has(.local) { scroll-padding-top: calc(var(--barra-local) + 12px); }
+}
 
 /* ---------- Abertura (hero) com o letreiro de LED ---------- */
 .hero { padding-block: clamp(48px, 7vw, 88px) clamp(72px, 9vw, 120px); }
