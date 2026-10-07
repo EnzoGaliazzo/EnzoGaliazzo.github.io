@@ -1,0 +1,60 @@
+/* Tokens do site: cores, tipografia, espaços e movimento. Tudo o que se repete mora aqui. */
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fontes/inter.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+:root {
+  /* Paleta neutra + uma única cor de destaque (o âmbar do letreiro de LED) */
+  --preto: #000;
+  --grafite: #1d1d1f;
+  --grafite-2: #2a2a2c;
+  --nevoa: #f5f5f7;
+  --branco: #fff;
+  --cinza-claro: #6e6e73;   /* texto secundário sobre fundo claro (contraste AA) */
+  --cinza-escuro: #a1a1a6;  /* texto secundário sobre fundo escuro (contraste AA) */
+  --linha: #d2d2d7;
+  --destaque: #ffa21f;
+  --destaque-texto: #a35600; /* o âmbar escurecido, para texto sobre fundo claro */
+  --whats: #25d366;
+
+  /* Cor do LED: muda com os botões de cor da galeria */
+  --led: #ffa21f;
+  --led-brilho: rgba(255, 162, 31, 0.5);
+
+  /* Tipografia: títulos de 48 a 96 px, peso 600–700, espaçamento negativo */
+  --fonte: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace;
+  --titulo-xl: clamp(48px, 5.4vw + 1rem, 96px);
+  --titulo-l: clamp(40px, 3.6vw + 1rem, 80px);
+  --titulo-m: clamp(32px, 2.6vw + 1rem, 56px);
+  --titulo-s: clamp(24px, 1.2vw + 1rem, 32px);
+  --subtitulo: clamp(24px, 2vw + 0.6rem, 40px);
+  --corpo-l: clamp(19px, 0.6vw + 0.9rem, 21px);
+  --corpo: 17px;
+  --pequeno: 14px;
+  --micro: 12px;
+  --aperto: -0.015em;
+
+  /* Forma */
+  --raio-g: 28px;
+  --raio-m: 18px;
+  --raio-p: 12px;
+  --pilula: 980px;
+
+  /* Movimento: o mesmo easing em tudo, de 0,4 a 0,8 s */
+  --facil: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --rapido: 0.4s;
+  --medio: 0.6s;
+  --lento: 0.8s;
+
+  /* Layout: quebras em 734 px e 1068 px */
+  --largura: 1180px;
+  --largura-texto: 980px;
+  --lateral: 22px;
+  --barra: 48px;
+  --barra-local: 52px;
+}
