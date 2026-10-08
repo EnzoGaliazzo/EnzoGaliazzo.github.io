@@ -1,9 +1,9 @@
 // Configurador da Quero um site: plano, páginas, extras e dados viram um resumo em tempo real,
-// guardado no navegador (gaveta "Seu pedido") e enviado pronto por WhatsApp ou e-mail.
+// guardado no navegador (gaveta "Seu pedido") e enviado pronto pelo WhatsApp da SeaTech, que faz os orçamentos.
 import { enderecoEmail } from '../nucleo/email.js';
 
 const CHAVE = 'pedido-orcamento';
-const WHATS = '5521920000983';
+const WHATS = '5521973030419'; // WhatsApp da SeaTech
 
 const rotulo = (input) => input.closest('label')?.querySelector('[data-rotulo]')?.textContent.trim() || input.value;
 const en = () => document.documentElement.lang.startsWith('en');
@@ -49,7 +49,7 @@ export default function ligar(formularios) {
     const mensagem = (p) => {
       const ingles = en();
       const linhas = [
-        ingles ? 'Hi, Enzo! I want a website for my business.' : 'Oi, Enzo! Quero um site para o meu negócio.',
+        ingles ? 'Hi, SeaTech! I want a website for my business.' : 'Oi, SeaTech! Quero um site para o meu negócio.',
         '',
         `${ingles ? 'Plan' : 'Plano'}: ${p.plano || '—'}`,
         `${ingles ? 'Pages' : 'Páginas'}: ${p.paginas || '—'}`,

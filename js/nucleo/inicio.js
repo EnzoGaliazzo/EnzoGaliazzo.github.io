@@ -19,7 +19,6 @@ const componentes = [
   ['[data-carrossel]', 'carrossel'],
   ['[data-quadros]', 'quadros'],
   ['[data-mockup]', 'mockup'],
-  ['[data-expandir]', 'expandir'],
   ['[data-galeria]', 'galeria'],
   ['[data-acende]', 'acende'],
   ['[data-saiba-mais]', 'saiba-mais'],
