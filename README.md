@@ -54,8 +54,8 @@ fontes/                 inter.woff2 + licença OFL
   ```
   Os vídeos só baixam quando chegam perto da tela (`preload="none"`), tocam sem som só enquanto aparecem e, com "reduzir movimento", ficam parados no pôster.
 
-## O que falta preencher (Enzo)
-Procure por `[preencher` no código: respostas das Perguntas frequentes (preço, prazo, domínio, manutenção, atendimento fora do Rio), os três passos de "O que vem depois" em `/quero-um-site/enviado/` e um interesse opcional em `/sobre/`.
+## Orçamentos
+Todos os orçamentos vão para o WhatsApp da SeaTech (configurador, rodapé e Contato). O site nunca mostra preço. O WhatsApp pessoal fica só no "Falar comigo".
 
 ## Segurança e privacidade
 - CSP por `<meta>` em todas as páginas: só scripts e estilos do próprio site, sem script inline e sem `style=""`.
